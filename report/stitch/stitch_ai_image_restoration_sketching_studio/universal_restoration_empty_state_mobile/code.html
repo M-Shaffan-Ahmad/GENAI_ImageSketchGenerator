@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed": "#002113", "secondary": "#006c49", "surface-container": "#e5eeff", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#005236", "outline-variant": "#bccac0", "on-primary-fixed": "#002114", "error-container": "#ffdad6", "error": "#ba1a1a", "surface-container-low": "#eff4ff", "primary": "#006948", "inverse-surface": "#213145", "secondary-fixed": "#6ffbbe", "surface-tint": "#006c4a", "surface-container-highest": "#d3e4fe", "on-secondary-container": "#00714d", "outline": "#6d7a72", "on-tertiary-fixed": "#131b2e", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "on-surface-variant": "#3d4a42", "primary-fixed": "#85f8c4", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "tertiary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#68dba9", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "primary-container": "#00855d", "tertiary-fixed-dim": "#bec6e0", "surface-bright": "#f8f9ff", "inverse-primary": "#68dba9", "on-tertiary-fixed-variant": "#3f465c", "on-tertiary-container": "#fefcff", "on-primary": "#ffffff", "on-background": "#0b1c30", "surface-dim": "#cbdbf5", "on-primary-container": "#f5fff7", "tertiary": "#545c72", "tertiary-container": "#6c748b", "secondary-container": "#6cf8bb", "secondary-fixed-dim": "#4edea3", "on-primary-fixed-variant": "#005137", "background": "#f8f9ff", "on-surface": "#0b1c30" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-sm": "0.5rem", "space-md": "1rem", "space-xs": "0.25rem", "margin-desktop": "2rem", "space-xl": "2rem", "gutter-desktop": "1.5rem", "margin": "1rem", "gutter": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "headline-sm": ["Space Grotesk"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["Space Grotesk"], "label-md": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-lg": ["Space Grotesk"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Space Grotesk"] }, fontSize: { "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-28 px-margin flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><img alt="CS4065 Vision Lab Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WbevpdTlBMPFt58DLIYh7Z7v_OhFgh65PTBzsVG4HOqc3LSVzjYoY7Ra3cn9u5rpW6GXst3WrQ8Bo9X6PPuOGl3aN8x_NyJi-IUGCmPImOr1RCPGP5p6i_HtAx0lW7Xkpol7_PAlz3MgHnLBWcOHk27GfgO9-eqqWUA-3Og3G3U8q08GasgWMF0guVKJuUAEIfLfKqCdQoDdahkoHJLroScIo2Rm-JNUNDXpt5IzLQHn5IQflhQrjLBR0"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-primary font-semibold tracking-wide uppercase truncate">CS4065 Vision Lab</span><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight truncate">Universal Restoration</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Assignment 3: Restoration &amp; MoE</span><span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-lowest text-outline font-label-sm text-label-sm">v3.4-eval</span></div></div></header><main class="flex flex-col relative w-full px-margin pt-28 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Secondary Workspace Sub-Navigator (Mobile Pill Ribbon) -->
+<div class="w-full bg-surface-container-low p-space-xs rounded-xl shadow-sm">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_fix_high</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">1. Universal</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">alt_route</span>
+<span class="font-label-sm text-label-sm font-medium truncate">2. Hard-Routed</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span class="font-label-sm text-label-sm font-medium truncate">3. Soft MoE</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span class="font-label-sm text-label-sm font-medium truncate">4. Sketch Gen</span>
+</button>
+</div>
+</div>
+<!-- Workspace Control Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Header with Lab Model Meta -->
+<div class="flex items-start justify-between gap-space-sm pb-space-xs">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Workspace 01</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Universal Restoration Bench</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant whitespace-nowrap">
+        ResNet-MoE 48M
+      </span>
+</div>
+<!-- Section: Input Specimen Mode Selection -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">image</span>
+          1. Input Selection
+        </label>
+<span class="font-label-sm text-label-sm text-error font-medium" id="selected-specimen-indicator">None selected</span>
+</div>
+<!-- Mode Selector Dual Pills -->
+<div class="grid grid-cols-2 gap-space-xs p-1 bg-surface-container-low rounded-lg">
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-label-sm text-label-sm font-semibold transition-all" id="tab-clean" onclick="switchInputSource('preset')" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">spa</span>
+          Reference Flower
+        </button>
+<button class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all" id="tab-upload" onclick="switchInputSource('upload')" type="button">
+<span class="material-symbols-outlined text-[15px]">file_upload</span>
+          Upload File
+        </button>
+</div>
+<!-- Preset Flower Chips Sub-panel -->
+<div class="flex flex-col gap-1.5 mt-1 bg-surface-container-low/60 p-space-sm rounded-lg" id="panel-presets">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Curated 512x512 Eval Sets:</span>
+<span class="italic text-outline">Select one below</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="flex flex-col items-center justify-center gap-1 p-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-highest transition-all group" id="chip-dahlia" onclick="selectFlower('Dahlia', 'pink-dahlia-highres', this)" type="button">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">local_florist</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate w-full text-center">Dahlia</span>
+<span class="font-label-sm text-[10px] leading-none text-outline">Var. Pinnata</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-highest transition-all group" id="chip-camellia" onclick="selectFlower('Camellia', 'camellia-japonica', this)" type="button">
+<span class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">psychiatry</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate w-full text-center">Camellia</span>
+<span class="font-label-sm text-[10px] leading-none text-outline">Japonica</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-highest transition-all group" id="chip-iris" onclick="selectFlower('Iris', 'iris-versicolor', this)" type="button">
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate w-full text-center">Iris</span>
+<span class="font-label-sm text-[10px] leading-none text-outline">Versicolor</span>
+</button>
+</div>
+</div>
+<!-- Upload Zone Sub-panel (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-space-md rounded-lg bg-surface-container-low text-center gap-1 mt-1" id="panel-upload">
+<span class="material-symbols-outlined text-[28px] text-outline">cloud_upload</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Drag specimen or tap to browse</p>
+<span class="font-label-sm text-label-sm text-outline">PNG, JPG or TIFF (Max 10MB, auto-scaled to 512px)</span>
+<button class="mt-2 px-3 py-1 bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold rounded-lg shadow-sm hover:bg-surface-container" onclick="simulateFileUpload()" type="button">
+          Choose Specimen File
+        </button>
+</div>
+</div>
+<!-- Section: Degradation Injection Pipeline -->
+<div class="flex flex-col gap-space-xs pt-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">tune</span>
+          2. Simulated Degradation Pipeline
+        </label>
+<span class="font-label-sm text-label-sm text-outline">σ / mask</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 accent-primary text-primary focus:ring-0 cursor-pointer" name="degradation" type="radio" value="none"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Identity (As Uploaded)</span>
+<span class="font-label-sm text-label-sm text-outline">Direct fidelity auto-encoding pass</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Clean</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 accent-primary text-primary focus:ring-0 cursor-pointer" name="degradation" type="radio" value="sp_noise"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Salt-and-Pepper Noise</span>
+<span class="font-label-sm text-label-sm text-outline">p = 0.15 impulse corruption</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Impulse</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 accent-primary text-primary focus:ring-0 cursor-pointer" name="degradation" type="radio" value="gaussian_blur"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Gaussian Blur Kernel</span>
+<span class="font-label-sm text-label-sm text-outline">k = 15x15, σ = 3.2 spatial filter</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Low-Pass</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 accent-primary text-primary focus:ring-0 cursor-pointer" name="degradation" type="radio" value="rect_occlusion"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Rectangular Occlusion</span>
+<span class="font-label-sm text-label-sm text-outline">Centered 128x128 blackout mask</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Inpainting</span>
+</label>
+</div>
+</div>
+<!-- Primary Action Button (Disabled State with Tooltip) -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="relative group w-full">
+<button class="w-full py-3 px-space-md rounded-xl bg-surface-container-high text-outline cursor-not-allowed font-label-md text-label-md font-semibold tracking-wide flex items-center justify-center gap-2 transition-all" disabled="" id="restore-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+          Restore Specimen Image
+        </button>
+<!-- Floating Tooltip for Empty State -->
+<div class="absolute -top-9 left-1/2 -translate-x-1/2 pointer-events-none px-2.5 py-1 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-md opacity-90 transition-opacity" id="btn-tooltip">
+          Select an input image first
+        </div>
+</div>
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span>Target: fp16 Inference</span>
+<span>Est. Latency: ~42ms</span>
+</div>
+</div>
+</div>
+<!-- Output Card: Empty State Specification -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Header with Tensor Status -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Tensor Reconstruction View</h3>
+<span class="font-label-sm text-label-sm text-outline">Side-by-side PSNR / SSIM Visualizer</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-outline font-medium">
+        Awaiting Buffer
+      </span>
+</div>
+<!-- Empty State Visual Surface -->
+<div class="relative w-full rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center justify-center text-center overflow-hidden">
+<!-- Decorative Analytical Background Geometry Grid -->
+<div class="absolute inset-0 opacity-15 pointer-events-none flex items-center justify-center">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="24" id="empty-grid" patternunits="userSpaceOnUse" width="24">
+<path class="text-outline" d="M 24 0 L 0 0 0 24" fill="none" stroke="currentColor" stroke-width="0.75"></path>
+</pattern>
+</defs>
+<rect fill="url(#empty-grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 flex flex-col items-center max-w-[280px] gap-space-sm">
+<!-- Interactive Empty State Icon Motif -->
+<div class="relative w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-primary shadow-sm mb-1">
+<span class="material-symbols-outlined text-[32px]">filter_vintage</span>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-outline shadow">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">No image loaded for inference</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tensor memory registers are cleared.</p>
+</div>
+<!-- Guidance Box with Slate Dashed Outline (Stylized via background) -->
+<div class="w-full mt-2 p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col items-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[18px] text-secondary">lightbulb</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+            Select a clean reference flower sample or upload a custom specimen from your device to initiate tensor restoration.
+          </p>
+</div>
+<!-- Quick Pick Prompt Pill -->
+<div class="mt-2 flex items-center gap-1.5 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">touch_app</span>
+<span>Tip: Tap <strong class="text-on-surface">Dahlia</strong> above to test</span>
+</div>
+</div>
+</div>
+<!-- Active Telemetry Metric Strips (Zero / Neutral States) -->
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline">PSNR (dB)</span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-tight">--.--</span>
+<span class="font-label-sm text-[10px] text-outline">Delta: 0.00</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline">SSIM Index</span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-tight">0.000</span>
+<span class="font-label-sm text-[10px] text-outline">Ref: ground truth</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline">MoE Gate</span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-tight">Idle</span>
+<span class="font-label-sm text-[10px] text-outline">Top-1 Weight</span>
+</div>
+</div>
+<!-- Active Model Checkpoint Details -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">deployed_code</span>
+<span class="font-label-sm text-label-sm">Checkpoint: <code class="text-on-surface font-bold">moe_univ_flor_e85.pth</code></span>
+</div>
+<span class="font-label-sm text-[11px] px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">Ready</span>
+</div>
+</div>
+</div>
+<script>
+  let activeSpecimen = null;
+
+  function switchInputSource(source) {
+    const tabClean = document.getElementById('tab-clean');
+    const tabUpload = document.getElementById('tab-upload');
+    const panelPresets = document.getElementById('panel-presets');
+    const panelUpload = document.getElementById('panel-upload');
+
+    if (source === 'preset') {
+      tabClean.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-label-sm text-label-sm font-semibold transition-all';
+      tabUpload.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
+      panelPresets.classList.remove('hidden');
+      panelPresets.classList.add('flex');
+      panelUpload.classList.remove('flex');
+      panelUpload.classList.add('hidden');
+    } else {
+      tabUpload.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-label-sm text-label-sm font-semibold transition-all';
+      tabClean.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
+      panelUpload.classList.remove('hidden');
+      panelUpload.classList.add('flex');
+      panelPresets.classList.remove('flex');
+      panelPresets.classList.add('hidden');
+    }
+  }
+
+  function selectFlower(name, id, buttonElem) {
+    activeSpecimen = { name, id, type: 'preset' };
+    
+    // Reset other chip styles
+    ['chip-dahlia', 'chip-camellia', 'chip-iris'].forEach(cId => {
+      const chip = document.getElementById(cId);
+      if (chip) {
+        chip.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed', 'shadow-sm');
+        chip.classList.add('bg-surface-container-lowest');
+      }
+    });
+
+    // Mark current selected
+    buttonElem.classList.remove('bg-surface-container-lowest');
+    buttonElem.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed', 'shadow-sm');
+
+    // Update indicator
+    const indicator = document.getElementById('selected-specimen-indicator');
+    indicator.textContent = `${name} (512x512)`;
+    indicator.className = 'font-label-sm text-label-sm text-secondary font-bold';
+
+    // Enable primary action button and hide tooltip
+    enableRestoreButton();
+  }
+
+  function simulateFileUpload() {
+    activeSpecimen = { name: 'specimen_custom_01.png', id: 'custom-file', type: 'upload' };
+    const indicator = document.getElementById('selected-specimen-indicator');
+    indicator.textContent = 'Custom Specimen (Ready)';
+    indicator.className = 'font-label-sm text-label-sm text-secondary font-bold';
+    enableRestoreButton();
+  }
+
+  function enableRestoreButton() {
+    const btn = document.getElementById('restore-btn');
+    const tooltip = document.getElementById('btn-tooltip');
+    
+    btn.disabled = false;
+    btn.className = 'w-full py-3 px-space-md rounded-xl bg-primary text-on-primary hover:bg-primary-container shadow-md font-label-md text-label-md font-bold tracking-wide flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer';
+    
+    if (tooltip) {
+      tooltip.classList.add('hidden');
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-semibold bg-surface-container/60"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[72px] h-12 rounded-xl transition-all px-1 text-primary font-semibold bg-surface-container/60" data-path="universal-restoration" href="#"><span class="material-symbols-outlined text-[20px]">auto_fix_high</span><span class="font-label-sm text-label-sm text-center leading-tight tracking-tight mt-0.5 line-clamp-1">Universal</span></a><a class="flex flex-col items-center justify-center min-w-[72px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all px-1" data-path="hard-routed-restoration" href="#"><span class="material-symbols-outlined text-[20px]">alt_route</span><span class="font-label-sm text-label-sm text-center leading-tight tracking-tight mt-0.5 line-clamp-1">Hard-Routed</span></a><a class="flex flex-col items-center justify-center min-w-[72px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all px-1" data-path="soft-mixture-of-experts" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-sm text-label-sm text-center leading-tight tracking-tight mt-0.5 line-clamp-1">Soft MoE</span></a><a class="flex flex-col items-center justify-center min-w-[72px] h-12 rounded-xl text-on-surface-variant hover:text-on-surface transition-all px-1" data-path="object-to-sketch" href="#"><span class="material-symbols-outlined text-[20px]">draw</span><span class="font-label-sm text-label-sm text-center leading-tight tracking-tight mt-0.5 line-clamp-1">Sketch Gen</span></a></div></nav></body></html>

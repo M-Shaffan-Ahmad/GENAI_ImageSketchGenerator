@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>CS4065 // Vision &amp; Generative AI Lab</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#002113",
+          "secondary": "#006c49",
+          "surface-container": "#e5eeff",
+          "on-secondary": "#ffffff",
+          "on-secondary-fixed-variant": "#005236",
+          "outline-variant": "#bccac0",
+          "on-primary-fixed": "#002114",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "surface-container-low": "#eff4ff",
+          "primary": "#006948",
+          "inverse-surface": "#213145",
+          "secondary-fixed": "#6ffbbe",
+          "surface-tint": "#006c4a",
+          "surface-container-highest": "#d3e4fe",
+          "on-secondary-container": "#00714d",
+          "outline": "#6d7a72",
+          "on-tertiary-fixed": "#131b2e",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#3d4a42",
+          "primary-fixed": "#85f8c4",
+          "on-error": "#ffffff",
+          "surface-container-high": "#dce9ff",
+          "tertiary-fixed": "#dae2fd",
+          "surface-variant": "#d3e4fe",
+          "primary-fixed-dim": "#68dba9",
+          "surface": "#f8f9ff",
+          "inverse-on-surface": "#eaf1ff",
+          "primary-container": "#00855d",
+          "tertiary-fixed-dim": "#bec6e0",
+          "surface-bright": "#f8f9ff",
+          "inverse-primary": "#68dba9",
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-tertiary-container": "#fefcff",
+          "on-primary": "#ffffff",
+          "on-background": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "on-primary-container": "#f5fff7",
+          "tertiary": "#545c72",
+          "tertiary-container": "#6c748b",
+          "secondary-container": "#6cf8bb",
+          "secondary-fixed-dim": "#4edea3",
+          "on-primary-fixed-variant": "#005137",
+          "background": "#f8f9ff",
+          "on-surface": "#0b1c30"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "margin-desktop": "2rem",
+          "space-xl": "2rem",
+          "gutter-desktop": "1.5rem",
+          "margin": "1rem",
+          "gutter": "1rem",
+          "space-lg": "1.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Space Grotesk"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-sm": ["Space Grotesk"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-xl-mobile": ["Space Grotesk"],
+          "label-md": ["JetBrains Mono"],
+          "body-sm": ["Inter"],
+          "headline-lg": ["Space Grotesk"],
+          "body-md": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-xl": ["Space Grotesk"]
+        },
+        "fontSize": {
+          "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+          "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><img alt="CS4065 Vision Lab Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbevpdTlBMPFt58DLIYh7Z7v_OhFgh65PTBzsVG4HOqc3LSVzjYoY7Ra3cn9u5rpW6GXst3WrQ8Bo9X6PPuOGl3aN8x_NyJi-IUGCmPImOr1RCPGP5p6i_HtAx0lW7Xkpol7_PAlz3MgHnLBWcOHk27GfgO9-eqqWUA-3Og3G3U8q08GasgWMF0guVKJuUAEIfLfKqCdQoDdahkoHJLroScIo2Rm-JNUNDXpt5IzLQHn5IQflhQrjLBR0"/><div class="flex flex-col justify-center border-l border-outline-variant pl-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">CS4065 // Vision &amp; Generative AI Lab</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-low text-primary border border-outline-variant">FALL 2024</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Generative AI Image Restoration and Sketch Generator</span></div></div><div class="flex items-center gap-space-xl"><nav class="flex items-center gap-space-lg h-20" data-active-classes="text-primary border-b-2 border-primary font-medium"><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="universal-restoration" href="#">1. Universal Restoration</a><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="hard-routed-restoration" href="#">2. Hard-Routed Restoration</a><a aria-current="page" class="h-full inline-flex items-center transition-colors text-primary border-b-2 border-primary font-medium" data-path="soft-moe-restoration" href="#">3. Soft Mixture-of-Experts Restoration</a><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="object-to-sketch-generator" href="#">4. Object-to-Sketch Generator</a></nav><div class="flex items-center pl-space-md border-l border-outline-variant"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<div class="w-full px-gutter-desktop py-space-lg flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary px-space-sm py-0.5 rounded bg-surface-container-high font-medium">Pipeline Stage 03</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">// Continuous Gating Network</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Soft Mixture-of-Experts Restoration Bench</h2>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded shadow-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Runtime:</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">PyTorch 2.4.0+cu121</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arch:</span>
+<span class="font-label-sm text-label-sm font-medium text-primary">SoftMoE-ResNet4x</span>
+</div>
+</div>
+</div>
+<div class="w-full grid grid-cols-1 lg:grid-cols-[300px_minmax(0,1fr)] gap-space-lg items-start">
+<aside class="w-full flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Inference Parameters</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Input Sample Vector</label>
+<div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">local_florist</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Dahlia (Botanical)</span>
+<span class="font-label-sm text-label-sm text-tertiary">1024x1024 RGB uint8</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-medium">CLEAN</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Degradation Prior</label>
+<div class="w-full py-space-xs px-space-sm bg-surface-container-low rounded flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-error">crop_free</span>
+<span class="font-label-sm text-label-sm font-medium">Rectangular occlusion</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Active</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">texture</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface uppercase tracking-wide">Occlusion Config</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="cov-slider">Covered Area (Ratio)</label>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface font-semibold shadow-xs" id="cov-val">0.22</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" id="cov-slider" max="0.35" min="0.10" step="0.01" type="range" value="0.22"/>
+<div class="flex justify-between font-label-sm text-label-sm text-tertiary">
+<span>0.10</span>
+<span>0.35</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Rectangles Count</label>
+<div class="grid grid-cols-3 gap-space-xs p-0.5 bg-surface-container-highest rounded">
+<button class="rect-btn py-1 text-center font-label-sm text-label-sm rounded transition-all text-on-surface-variant hover:text-on-surface" data-count="1" type="button">1</button>
+<button class="rect-btn py-1 text-center font-label-sm text-label-sm rounded transition-all bg-surface-container-lowest font-medium text-on-surface shadow-xs" data-count="2" type="button">2</button>
+<button class="rect-btn py-1 text-center font-label-sm text-label-sm rounded transition-all text-on-surface-variant hover:text-on-surface" data-count="3" type="button">3</button>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-tertiary font-label-sm text-label-sm pt-space-xs">
+<div class="flex justify-between">
+<span>Bounding mode:</span>
+<span class="text-on-surface">Stochastic Uniform</span>
+</div>
+<div class="flex justify-between">
+<span>Fill value:</span>
+<span class="text-on-surface">Mean Grey (0.502)</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-space-xs py-space-sm px-space-md bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors shadow-sm active:scale-[0.99]" id="restore-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+<span>Restore image</span>
+</button>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span>Checkpoints: Weights loaded #MoE-v2.1</span>
+</div>
+</aside>
+<section class="w-full flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded shadow-sm min-w-0">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              RESTORATION COMPLETE
+            </span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span class="text-on-surface font-medium">52.7 ms</span>
+<span>(Soft MoE forward pass)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-space-xs bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm rounded flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">analytics</span>
+              Log Run
+            </button>
+<button class="px-space-md py-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm rounded flex items-center gap-1 transition-colors shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Download result (PNG)</span>
+</button>
+</div>
+</div>
+<div class="w-full p-space-md bg-surface-container-low rounded flex flex-col gap-space-md">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+                Learned Mixture Weights (Soft Expert Blending)
+              </h3>
+<span class="font-label-sm text-label-sm font-mono text-tertiary">Entropy: 0.612 nats</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Soft MoE calculates continuous convex combination weights across all specialist sub-networks; this is a weighted convex combination, not a single winner-take-all expert.
+            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-xs flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-medium">Identity / Clean</span>
+<span class="font-mono text-on-surface font-semibold">8.4%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded transition-all duration-500" style="width: 8.4%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">w₁: High-pass pass-through</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-xs flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-medium">Gaussian Noise</span>
+<span class="font-mono text-on-surface font-semibold">3.1%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded overflow-hidden">
+<div class="bg-tertiary h-full rounded transition-all duration-500" style="width: 3.1%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">w₂: Denoising autoencoder</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-xs flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-medium">Defocus Blur</span>
+<span class="font-mono text-on-surface font-semibold">6.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded overflow-hidden">
+<div class="bg-tertiary-container h-full rounded transition-all duration-500" style="width: 6.2%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">w₃: Deblur inverse-filter</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-xs flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<span class="text-primary font-bold">Occlusion Expert</span>
+<span class="font-mono text-primary font-bold text-headline-sm">82.3%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded overflow-hidden">
+<div class="bg-primary h-full rounded transition-all duration-500" style="width: 82.3%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">w₄: Gated inpainting sub-net</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-medium">Inspection Tensors [N=4, C=3, H=1024, W=1024]</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Synchronized zoom 100%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-space-md">
+<div class="flex flex-col bg-surface-container-low rounded overflow-hidden shadow-xs">
+<div class="px-space-sm py-space-xs bg-surface-container-lowest flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Input Tensor (Occluded)</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 bg-error-container text-on-error-container rounded">2 Masks</span>
+</div>
+<div class="relative aspect-square w-full bg-surface-container-highest overflow-hidden">
+<img alt="Occluded input Dahlia" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAI1FlSclLr-FRNGB6dAYzqNy2NPc3Afu7wj0RTVpz1DNFCfiW1vDi-8hv1CdaqXwvDMxcXfda7uwaSsdyOjMXUlQdo4z65uKAsa098eaxKu2-aGWe8m5h7Q_u0DOvF5kKMYAaX1iBn944SmVFcCWoEdrPP8_4EBrGC0Tx-t1QX5mQ7evBUSW2C102EZeqQQadED3CfWjI_Vk9iY5XHQxFjNR1clBTjPc3n_AyOaCdxZu2ex3MMq_6"/>
+<div class="absolute top-[18%] left-[22%] w-[38%] h-[26%] bg-[#808080] shadow-sm flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-surface-container-lowest font-mono opacity-80">MASK_01 (0.502)</span>
+</div>
+<div class="absolute bottom-[20%] right-[16%] w-[42%] h-[28%] bg-[#808080] shadow-sm flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-surface-container-lowest font-mono opacity-80">MASK_02 (0.502)</span>
+</div>
+</div>
+<div class="p-space-xs font-label-sm text-label-sm text-on-surface-variant flex justify-between bg-surface-container-low">
+<span>Cov: 22.0%</span>
+<span>Spatial: Cartesian</span>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded overflow-hidden shadow-xs">
+<div class="px-space-sm py-space-xs bg-surface-container-lowest flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-medium text-primary">Restored Image (MoE)</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 bg-secondary-container text-on-secondary-fixed rounded font-medium">Synthesized</span>
+</div>
+<div class="relative aspect-square w-full bg-surface-container-highest overflow-hidden">
+<img alt="Restored Dahlia output" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAI1FlSclLr-FRNGB6dAYzqNy2NPc3Afu7wj0RTVpz1DNFCfiW1vDi-8hv1CdaqXwvDMxcXfda7uwaSsdyOjMXUlQdo4z65uKAsa098eaxKu2-aGWe8m5h7Q_u0DOvF5kKMYAaX1iBn944SmVFcCWoEdrPP8_4EBrGC0Tx-t1QX5mQ7evBUSW2C102EZeqQQadED3CfWjI_Vk9iY5XHQxFjNR1clBTjPc3n_AyOaCdxZu2ex3MMq_6"/>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-secondary-fixed">check_circle</span>
+<span>Soft blended reconstruction</span>
+</div>
+</div>
+<div class="p-space-xs font-label-sm text-label-sm text-on-surface-variant flex justify-between bg-surface-container-low">
+<span>Loss: 0.0142 L1</span>
+<span>Infilled</span>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded overflow-hidden shadow-xs">
+<div class="px-space-sm py-space-xs bg-surface-container-lowest flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Clean Reference</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 bg-surface-container-highest text-tertiary rounded font-mono">GT</span>
+</div>
+<div class="relative aspect-square w-full bg-surface-container-highest overflow-hidden">
+<img alt="Ground truth clean Dahlia" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAI1FlSclLr-FRNGB6dAYzqNy2NPc3Afu7wj0RTVpz1DNFCfiW1vDi-8hv1CdaqXwvDMxcXfda7uwaSsdyOjMXUlQdo4z65uKAsa098eaxKu2-aGWe8m5h7Q_u0DOvF5kKMYAaX1iBn944SmVFcCWoEdrPP8_4EBrGC0Tx-t1QX5mQ7evBUSW2C102EZeqQQadED3CfWjI_Vk9iY5XHQxFjNR1clBTjPc3n_AyOaCdxZu2ex3MMq_6"/>
+</div>
+<div class="p-space-xs font-label-sm text-label-sm text-on-surface-variant flex justify-between bg-surface-container-low">
+<span>Target: Uncorrupted</span>
+<span>RGB uint8</span>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low rounded overflow-hidden shadow-xs">
+<div class="px-space-sm py-space-xs bg-surface-container-lowest flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Absolute Error Map</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 bg-surface-container-highest text-tertiary rounded font-mono font-medium">|Ŷ - Y|</span>
+</div>
+<div class="relative aspect-square w-full bg-on-background flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full" viewbox="0 0 400 400">
+<rect fill="#08101a" height="400" width="400"></rect>
+<circle cx="200" cy="200" fill="#132438" opacity="0.4" r="160"></circle>
+<rect fill="#006c4a" height="104" opacity="0.7" rx="4" width="152" x="88" y="72"></rect>
+<rect fill="#6ffbbe" filter="blur(4px)" height="80" opacity="0.45" width="128" x="100" y="84"></rect>
+<rect fill="#006c4a" height="112" opacity="0.75" rx="4" width="168" x="216" y="240"></rect>
+<rect fill="#6ffbbe" filter="blur(4px)" height="80" opacity="0.5" width="136" x="232" y="256"></rect>
+<path d="M 120 110 Q 150 140 180 120 T 210 130" fill="none" opacity="0.8" stroke="#f5fff7" stroke-width="1.5"></path>
+<path d="M 250 280 Q 280 310 320 290 T 350 310" fill="none" opacity="0.8" stroke="#f5fff7" stroke-width="1.5"></path>
+</svg>
+<div class="absolute bottom-2 right-2 flex items-center gap-1 bg-surface-container-lowest/90 px-space-xs py-0.5 rounded text-on-surface font-label-sm text-label-sm font-mono">
+<span>Δmax = 0.082</span>
+</div>
+</div>
+<div class="p-space-xs font-label-sm text-label-sm text-on-surface-variant flex justify-between bg-surface-container-low">
+<span>Color: Viridis norm</span>
+<span>Sparse residuals</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low p-space-md rounded flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase">PSNR Metric</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-mono font-bold">30.4</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">dB</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">(+14.2 dB vs Input)</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase">SSIM Metric</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-mono font-bold">0.918</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">(Target: ≥ 0.900)</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase">LPIPS (AlexNet)</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-mono font-bold">0.074</span>
+<span class="font-label-sm text-label-sm text-tertiary ml-1">Perceptual</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Validation Passed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Continuous dispatch fidelity threshold met.</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+    (function() {
+      const slider = document.getElementById('cov-slider');
+      const readout = document.getElementById('cov-val');
+      if (slider && readout) {
+        slider.addEventListener('input', function(e) {
+          readout.textContent = parseFloat(e.target.value).toFixed(2);
+        });
+      }
+
+      const rectButtons = document.querySelectorAll('.rect-btn');
+      rectButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          rectButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'font-medium', 'text-on-surface', 'shadow-xs');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-lowest', 'font-medium', 'text-on-surface', 'shadow-xs');
+          btn.classList.remove('text-on-surface-variant');
+        });
+      });
+
+      const restoreBtn = document.getElementById('restore-btn');
+      if (restoreBtn) {
+        restoreBtn.addEventListener('click', function() {
+          const originalContent = restoreBtn.innerHTML;
+          restoreBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Computing forward pass...</span>';
+          setTimeout(() => {
+            restoreBtn.innerHTML = originalContent;
+          }, 450);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-space-md"><div class="w-full px-gutter-desktop flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>CS4065 Deep Generative Computer Vision Research Bench</span><span>Evaluation Framework v2.4 // PyTorch Core Runtime</span></div></footer></body></html>

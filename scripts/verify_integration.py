@@ -22,7 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 os.chdir(ROOT)
 OUT = ROOT/'runs/integration'
 OUT.mkdir(parents=True, exist_ok=True)
-BASE = 'http://127.0.0.1:18080'
+WEB_PORT = int(os.environ.get('VERIFY_WEB_PORT', '18080'))
+CHROME_PORT = int(os.environ.get('VERIFY_CHROME_PORT', '9227'))
+BASE = f'http://127.0.0.1:{WEB_PORT}'
 
 
 def get(path):
@@ -62,7 +64,7 @@ def main():
     processes=[]
     logs=[]
     try:
-        for port in [18080,9227]:
+        for port in [WEB_PORT,CHROME_PORT]:
             try:
                 urlopen(f'http://127.0.0.1:{port}',timeout=.3)
             except HTTPError:
@@ -71,7 +73,7 @@ def main():
                 continue
             raise RuntimeError(f'Port {port} is already in use')
         log=(OUT/'web_server.log').open('w');logs.append(log)
-        processes.append(subprocess.Popen([sys.executable,'-m','uvicorn','backend.web:app','--host','127.0.0.1','--port','18080'],stdout=log,stderr=log))
+        processes.append(subprocess.Popen([sys.executable,'-m','uvicorn','backend.web:app','--host','127.0.0.1','--port',str(WEB_PORT)],stdout=log,stderr=log))
         for _ in range(100):
             try:
                 health=get('/api/health');break
@@ -126,17 +128,17 @@ def main():
         with tempfile.TemporaryDirectory(prefix='ass1-chrome-') as profile:
             log=(OUT/'chrome.log').open('w');logs.append(log)
             processes.append(subprocess.Popen([chrome,'--headless=new','--disable-gpu','--no-first-run','--no-default-browser-check',
-                                               '--remote-debugging-port=9227','--user-data-dir='+profile,'about:blank'],stdout=log,stderr=log))
+                                               f'--remote-debugging-port={CHROME_PORT}','--user-data-dir='+profile,'about:blank'],stdout=log,stderr=log))
             for _ in range(100):
                 try:
-                    with urlopen('http://127.0.0.1:9227/json/list',timeout=1) as response:
+                    with urlopen(f'http://127.0.0.1:{CHROME_PORT}/json/list',timeout=1) as response:
                         if json.load(response):break
                 except (URLError,TimeoutError):
                     pass
                 time.sleep(.1)
             else:
                 raise RuntimeError('Chrome failed to start; see chrome.log')
-            subprocess.run([node,'scripts/check_browser.mjs'],check=True,timeout=90)
+            subprocess.run([node,'scripts/check_browser.mjs'],check=True,timeout=90,env={**os.environ,'APP_URL':BASE,'CDP_URL':f'http://127.0.0.1:{CHROME_PORT}'})
     finally:
         for process in reversed(processes):
             process.terminate()

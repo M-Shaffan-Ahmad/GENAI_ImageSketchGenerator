@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const output = 'runs/integration/browser';
 const appUrl = process.env.APP_URL || 'http://127.0.0.1:18080';
 fs.mkdirSync(output, {recursive:true});
-const pages = await (await fetch('http://127.0.0.1:9227/json/list')).json();
+const pages = await (await fetch((process.env.CDP_URL || 'http://127.0.0.1:9227')+'/json/list')).json();
 const page = pages.find(p=>p.type==='page');
 const ws = new WebSocket(page.webSocketDebuggerUrl);
 await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
@@ -36,14 +36,14 @@ try{
     await evaluate(`document.querySelectorAll('nav button')[${index}].click()`);
     await waitFor(`document.querySelectorAll('nav button')[${index}].getAttribute('aria-pressed')==='true'`);
     if(index<3){
-      await evaluate("(()=>{const s=document.querySelectorAll('form select')[1];s.value='gaussian_blur';s.dispatchEvent(new Event('change',{bubbles:true}));})()");
+      await evaluate("document.querySelector('input[name=condition][value=gaussian_blur]').click()");
     }
     const styleOutputs=[];
     for(const style of index===3?[1,2,3]:[null]){
-      if(style)await evaluate(`(()=>{const s=document.querySelectorAll('form select')[1];s.value='${style}';s.dispatchEvent(new Event('change',{bubbles:true}));})()`);
-      await waitFor("!document.querySelector('form button').disabled");
-      await evaluate("document.querySelector('form button').click()");
-      await waitFor("!document.querySelector('form button').disabled && (document.querySelector('figure img') || document.querySelector('[role=alert]').textContent)");
+      if(style)await evaluate(`document.querySelector('input[name=style][value="${style}"]').click()`);
+      await waitFor("!document.querySelector('[data-testid=run]').disabled");
+      await evaluate("document.querySelector('[data-testid=run]').click()");
+      await waitFor("!document.querySelector('[data-testid=run]').disabled && (document.querySelector('figure img') || document.querySelector('[role=alert]').textContent)");
       const state=await evaluate("({error:document.querySelector('[role=alert]').textContent, title:document.querySelector('h1').textContent,figures:document.querySelectorAll('figure').length, output:document.querySelectorAll('figure img')[1]?.src,download:document.querySelector('a[download]')?.download,weights:document.querySelectorAll('progress').length,smoke:document.body.textContent.includes('Development model')})");
       assert(!state.error, state.error);
       assert(state.output?.startsWith('data:image/png;base64,'),'Missing image');
@@ -63,6 +63,18 @@ try{
     }
     await send('Emulation.setDeviceMetricsOverride',{width:1365,height:1000,deviceScaleFactor:1,mobile:false});
   }
+  // Exercise the actual browser file picker and switching back to samples.
+  const manifest=JSON.parse(fs.readFileSync('data/prepared_v2/restoration/val.json','utf8'));
+  const document=await send('DOM.getDocument');
+  const input=await send('DOM.querySelector',{nodeId:document.root.nodeId,selector:'input[type=file]'});
+  await send('DOM.setFileInputFiles',{nodeId:input.nodeId,files:[(await import('node:path')).resolve(manifest[0].path)]});
+  await waitFor("document.querySelector('.upload-preview img') && !document.querySelector('form select').value");
+  await evaluate("document.querySelector('[data-testid=run]').click()");
+  await waitFor("!document.querySelector('[data-testid=run]').disabled && document.querySelector('figure img')");
+  assert(await evaluate("document.querySelectorAll('figure').length===2 && !document.querySelector('[role=alert]').textContent"),'Browser upload failed');
+  await evaluate("(()=>{const s=document.querySelector('form select');s.value=s.options[1].value;s.dispatchEvent(new Event('change',{bubbles:true}));})()");
+  await waitFor("document.querySelector('input[type=file]').files.length===0 && !document.querySelector('.upload-preview') && !document.querySelector('figure')");
+  checks.push({browserUpload:true,sampleSwitchClearsUpload:true,passed:true});
   assert(errors.length===0,'Browser exceptions: '+errors.join(', '));
   fs.writeFileSync(`${output}/results.json`,JSON.stringify({passed:true,checks,browserExceptions:errors,viewports:[1365,390]},null,2));
   console.log('Production browser checks passed: all four workspaces, all three sketch styles, desktop/mobile screenshots.');

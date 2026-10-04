@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>CS4065 // Vision &amp; Generative AI Lab</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#002113",
+          "secondary": "#006c49",
+          "surface-container": "#e5eeff",
+          "on-secondary": "#ffffff",
+          "on-secondary-fixed-variant": "#005236",
+          "outline-variant": "#bccac0",
+          "on-primary-fixed": "#002114",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "surface-container-low": "#eff4ff",
+          "primary": "#006948",
+          "inverse-surface": "#213145",
+          "secondary-fixed": "#6ffbbe",
+          "surface-tint": "#006c4a",
+          "surface-container-highest": "#d3e4fe",
+          "on-secondary-container": "#00714d",
+          "outline": "#6d7a72",
+          "on-tertiary-fixed": "#131b2e",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#3d4a42",
+          "primary-fixed": "#85f8c4",
+          "on-error": "#ffffff",
+          "surface-container-high": "#dce9ff",
+          "tertiary-fixed": "#dae2fd",
+          "surface-variant": "#d3e4fe",
+          "primary-fixed-dim": "#68dba9",
+          "surface": "#f8f9ff",
+          "inverse-on-surface": "#eaf1ff",
+          "primary-container": "#00855d",
+          "tertiary-fixed-dim": "#bec6e0",
+          "surface-bright": "#f8f9ff",
+          "inverse-primary": "#68dba9",
+          "on-tertiary-fixed-variant": "#3f465c",
+          "on-tertiary-container": "#fefcff",
+          "on-primary": "#ffffff",
+          "on-background": "#0b1c30",
+          "surface-dim": "#cbdbf5",
+          "on-primary-container": "#f5fff7",
+          "tertiary": "#545c72",
+          "tertiary-container": "#6c748b",
+          "secondary-container": "#6cf8bb",
+          "secondary-fixed-dim": "#4edea3",
+          "on-primary-fixed-variant": "#005137",
+          "background": "#f8f9ff",
+          "on-surface": "#0b1c30"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "margin-desktop": "2rem",
+          "space-xl": "2rem",
+          "gutter-desktop": "1.5rem",
+          "margin": "1rem",
+          "gutter": "1rem",
+          "space-lg": "1.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Space Grotesk"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-sm": ["Space Grotesk"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-xl-mobile": ["Space Grotesk"],
+          "label-md": ["JetBrains Mono"],
+          "body-sm": ["Inter"],
+          "headline-lg": ["Space Grotesk"],
+          "body-md": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-xl": ["Space Grotesk"]
+        },
+        "fontSize": {
+          "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+          "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><img alt="CS4065 Vision Lab Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WbevpdTlBMPFt58DLIYh7Z7v_OhFgh65PTBzsVG4HOqc3LSVzjYoY7Ra3cn9u5rpW6GXst3WrQ8Bo9X6PPuOGl3aN8x_NyJi-IUGCmPImOr1RCPGP5p6i_HtAx0lW7Xkpol7_PAlz3MgHnLBWcOHk27GfgO9-eqqWUA-3Og3G3U8q08GasgWMF0guVKJuUAEIfLfKqCdQoDdahkoHJLroScIo2Rm-JNUNDXpt5IzLQHn5IQflhQrjLBR0"/><div class="flex flex-col justify-center border-l border-outline-variant pl-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">CS4065 // Vision &amp; Generative AI Lab</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-low text-primary border border-outline-variant">FALL 2024</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Generative AI Image Restoration and Sketch Generator</span></div></div><div class="flex items-center gap-space-xl"><nav class="flex items-center gap-space-lg h-20" data-active-classes="text-primary border-b-2 border-primary font-medium"><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="universal-restoration" href="#">1. Universal Restoration</a><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="hard-routed-restoration" href="#">2. Hard-Routed Restoration</a><a class="h-full inline-flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md border-b-2 border-transparent" data-path="soft-moe-restoration" href="#">3. Soft Mixture-of-Experts Restoration</a><a aria-current="page" class="h-full inline-flex items-center transition-colors text-primary border-b-2 border-primary font-medium" data-path="object-to-sketch-generator" href="#">4. Object-to-Sketch Generator</a></nav><div class="flex items-center pl-space-md border-l border-outline-variant"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Sub-header Breadcrumb & Operational Pipeline Ribbon -->
+<div class="w-full bg-surface-container-lowest px-gutter-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<span>Workspace 04</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-medium">Object-to-Sketch Synthesis</span>
+</div>
+<span class="h-4 w-px bg-outline-variant"></span>
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-low font-label-sm text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>ENGINE: Contours-Latent-Diff-v4.1</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">memory</span>
+<span>CUDA: 0 (NVIDIA A100-SXM4)</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">38.1 ms</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="px-space-sm py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-medium">
+        READY / IDLE
+      </div>
+</div>
+</div>
+<!-- Main 2-Column Console Layout -->
+<div class="w-full p-gutter-desktop flex flex-col lg:flex-row gap-space-xl items-start">
+<!-- Left Column: Controls (Approx 320px fixed) -->
+<aside class="w-full lg:w-[320px] lg:flex-shrink-0 flex flex-col gap-space-lg">
+<!-- Input Selection Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">photo_library</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Input Sample</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-low text-primary">Clean Source</span>
+</div>
+<!-- Sample Dropdown / Active Choice -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Specimen</label>
+<div class="relative">
+<button class="w-full flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg text-left text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-6 h-6 rounded bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[14px]">local_florist</span>
+</span>
+<span class="truncate font-medium">Rose / Botanical Flower</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Specimen Metadata Capsule -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex justify-between">
+<span>Dimensions:</span>
+<span class="font-label-md text-label-md text-on-surface">1024 × 1024 px</span>
+</div>
+<div class="flex justify-between">
+<span>Color Profile:</span>
+<span class="font-label-md text-label-md text-on-surface">sRGB D65</span>
+</div>
+<div class="flex justify-between">
+<span>Dynamic Range:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Normalized [0, 1]</span>
+</div>
+</div>
+<!-- Dropzone alternate -->
+<div class="w-full border-dashed rounded-lg p-space-md flex flex-col items-center justify-center gap-space-xs text-center bg-surface-bright hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[24px]">cloud_upload</span>
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary font-medium">Upload Custom Object</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PNG, JPG, TIFF up to 24MB</span>
+</div>
+</div>
+<!-- Style Engine Selector Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">draw</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Synthesis Style</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">K-Sampler v3</span>
+</div>
+<!-- 3-Choice Style Selector -->
+<div aria-label="Synthesis style selection" class="grid grid-cols-1 gap-space-xs" role="radiogroup">
+<!-- Fine Pencil (Selected) -->
+<div class="cursor-pointer p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm shadow-sm transition-all" id="style-pencil">
+<div class="mt-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Fine Pencil</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-primary-fixed text-on-primary-fixed font-medium">ACTIVE</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">High-frequency graphite hatch &amp; soft organic tonal shading.</span>
+</div>
+</div>
+<!-- Technical Ink -->
+<div class="cursor-pointer p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low flex items-start gap-space-sm transition-all" id="style-ink">
+<div class="mt-0.5 w-4 h-4 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0"></div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-medium text-on-surface">Technical Ink</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0.18mm</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Vectorized stippling, architectural crisp contour weights.</span>
+</div>
+</div>
+<!-- Tonal Charcoal -->
+<div class="cursor-pointer p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low flex items-start gap-space-sm transition-all" id="style-charcoal">
+<div class="mt-0.5 w-4 h-4 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0"></div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-medium text-on-surface">Tonal Charcoal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Soft Vine</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Broad velvety strokes with expressive smudge gradations.</span>
+</div>
+</div>
+</div>
+<!-- Detailed Stroke Fidelity Preview -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fidelity Hyperparameters</span>
+<!-- Lead Grade Parameter -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Graphite Lead Grade</span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-semibold">2B Medium-Soft</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 62%;"></div>
+</div>
+</div>
+<!-- Cross-hatch Density -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Cross-Hatching Density</span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-semibold">Medium (0.48 lp/mm)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Edge Retention Lambda -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Edge Saliency (λ<sub>c</sub>)</span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-semibold">0.84</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+<!-- Primary Action Trigger -->
+<button class="w-full mt-space-xs bg-primary hover:bg-primary-container text-on-primary py-space-sm px-space-md rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-space-sm transition-all shadow-sm active:scale-[0.98]" id="btn-generate">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+<span>Generate Sketch</span>
+</button>
+<div class="flex items-center justify-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span>Deterministic Seed: 498102</span>
+</div>
+</div>
+<!-- Quick Run Telemetry Box -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Diffusion Graph Status</span>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+<span>Latent Contours</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Converged (Step 30/30)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+<span>Perceptual Loss (ƒ<sub>p</sub>)</span>
+<span class="font-label-md text-label-md font-semibold">0.0142</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+<span>VRAM Occupancy</span>
+<span class="font-label-md text-label-md">3.4 GB / 80 GB</span>
+</div>
+</div>
+</aside>
+<!-- Right Column: Flexible Output Canvas -->
+<main class="flex-1 w-full flex flex-col gap-space-lg">
+<!-- Primary Output Inspection Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm flex flex-col overflow-hidden">
+<!-- Top Output Meta Bar -->
+<div class="w-full px-space-md py-space-sm bg-surface-container-lowest flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Generation Successful</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">
+<span class="text-on-surface-variant">Style:</span>
+<span class="font-semibold text-primary">Fine Pencil</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">
+<span>Time:</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">38.1 ms</span>
+<span class="text-outline text-[10px]">(Diffusion Contour Extractor)</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+<span>100%</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-1.5 rounded-lg flex items-center gap-space-xs transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download result</span>
+</button>
+</div>
+</div>
+<!-- Output Display: Side-by-Side Comparison (Strictly 2 Panes, NO Error Map) -->
+<div class="w-full p-space-md grid grid-cols-1 md:grid-cols-2 gap-space-md bg-surface">
+<!-- Pane 1: Original Clean Photograph -->
+<div class="w-full flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<!-- Header Badge -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">image</span>
+<span class="font-medium text-on-surface">Original Photograph</span>
+</div>
+<span class="px-space-xs py-0.2 rounded bg-surface-container-highest text-tertiary font-label-sm">Clean Input [RGB]</span>
+</div>
+<!-- Image Viewport -->
+<div class="relative w-full aspect-square bg-surface-container-lowest flex items-center justify-center p-space-sm overflow-hidden group">
+<img alt="Original Clean Rose Botanical Specimen" class="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Close up photograph of a vibrant pink dahlia flower in full bloom isolated on clean white studio backdrop, exhibiting delicate radial geometric petals, centered sharp focus, natural vivid saturated hues, laboratory test specimen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi3v2CbdbeWODxpRxX2iIoRN5vMyxh8tEEhrWVt12verpA6GG3ph_lAVBwrvZxS4ZMLz9Kh0vHd3JujXsJweTHS2afi8jUSY-UoW4WcmVK7RY30f1QRh_bCui8r73TjzgfkZFLB5SnedQYIUftqCoqXjaXoOfnQx4Wxt0wawYu5iJPxqLHKEplHV0xNd3Xd5VGdUkAsXSR5KI9XUeMHyepCET5-E3sssiI-zy1DFI7A5flVuwvPOIf"/>
+<div class="absolute bottom-space-md left-space-md px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-on-surface shadow-sm">
+                1024 × 1024 • 24bpp
+              </div>
+</div>
+<!-- Sub-label Footer -->
+<div class="px-space-md py-space-xs bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant flex justify-between items-center">
+<span>Source: Standardized Botanical Test Suite</span>
+<span class="text-primary font-medium">Uncorrupted Reference</span>
+</div>
+</div>
+<!-- Pane 2: Generated Sketch (Fine Graphite Drawing) -->
+<div class="w-full flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<!-- Header Badge -->
+<div class="px-space-md py-space-sm bg-secondary-fixed/30 flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">brush</span>
+<span class="font-medium text-on-surface">Generated Sketch</span>
+</div>
+<span class="px-space-xs py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold font-label-sm">Graphite Spec 2B</span>
+</div>
+<!-- Image Viewport -->
+<div class="relative w-full aspect-square bg-surface-container-lowest flex items-center justify-center p-space-sm overflow-hidden group">
+<img alt="Synthesized Fine Pencil Sketch of Flower" class="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Exquisite vintage botanical pencil sketch of an English rose blossom on archival heavy cotton paper, intricate delicate graphite cross-hatching, fine line contours, soft lead shading, realistic traditional botanical illustration style, high fidelity black and white pencil render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXltm217NLdA74FaAX8V2emJoaOa8cb5COqBASwvRvxyf_OZnbFbnHAcDUfG-YLG-bztrF48wpIus6AXRFiyAsjk4L5dBVovkyXsWuY9cUvtJ96VCrIhzXfoA_S58PBbAGdcOquUQqsdAyxFP0CdiQrGM9duZShBRmh1t499LRmTuuNDt6Uexy1e0xXVVd7Tkn1WGQD1kGDSO6gMFfSEg6No3gDxoo5BkRa-sgf90QzBD9fzkljEzA"/>
+<div class="absolute bottom-space-md right-space-md px-space-sm py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-semibold shadow-sm flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Fidelity 99.4%</span>
+</div>
+</div>
+<!-- Sub-label Footer -->
+<div class="px-space-md py-space-xs bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant flex justify-between items-center">
+<span>Synthesized: Latent Contour Transformer</span>
+<span class="text-secondary font-medium">Archival Texture Applied</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Style Characteristics & Stroke Analytics Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">query_stats</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Style Characteristics &amp; Stroke Profiler</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Model Checkpoint:</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface font-label-md text-label-md">sketch_diffusion_base_epoch180.pt</span>
+</div>
+</div>
+<!-- 3 Quantitative Metric Pillars -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Pillar 1: Pencil Pressure Variation -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pressure Variation</span>
+<span class="material-symbols-outlined text-primary text-[18px]">gesture</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">0.784</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">σ normalized</span>
+</div>
+<!-- Micro SVG Sparkline Curve for Pressure Response -->
+<div class="w-full h-8 flex items-end">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 100 28">
+<path d="M0 24 C 15 24, 20 8, 35 14 C 50 20, 65 4, 80 10 C 90 15, 95 6, 100 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M0 24 C 15 24, 20 8, 35 14 C 50 20, 65 4, 80 10 C 90 15, 95 6, 100 8 L 100 28 L 0 28 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">High dynamic stroke variance matching organic hand pressure.</span>
+</div>
+<!-- Pillar 2: Cross-hatch Shading Distribution -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hatch Distribution</span>
+<span class="material-symbols-outlined text-primary text-[18px]">grid_4x4</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">89.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Uniformity</span>
+</div>
+<!-- Micro Progress Segments -->
+<div class="w-full flex items-center gap-1 h-3">
+<div class="h-full rounded-sm bg-primary" style="width: 30%;"></div>
+<div class="h-full rounded-sm bg-primary" style="width: 25%;"></div>
+<div class="h-full rounded-sm bg-primary" style="width: 22%;"></div>
+<div class="h-full rounded-sm bg-primary-container" style="width: 12%;"></div>
+<div class="h-full rounded-sm bg-outline-variant" style="width: 11%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Shadow Core</span>
+<span>Midtones</span>
+<span>Highlights</span>
+</div>
+</div>
+<!-- Pillar 3: Stroke Count Estimation -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estimated Stroke Count</span>
+<span class="material-symbols-outlined text-primary text-[18px]">brush</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">42,800</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">strokes</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-on-surface-variant">Mean Stroke Length:</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">14.6 px</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dense multi-layered graphite laydown on simulated tooth.</span>
+</div>
+</div>
+<!-- Qualitative Technical Note -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-md text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0">info</span>
+<p class="leading-relaxed">
+<strong class="font-semibold text-primary">Ablation Observation:</strong> In the Fine Pencil mode, the neural vector field enforces laplacian smoothness along high-curvature petals while suppressing non-directional background noise. No explicit photometric difference map is computed since cross-domain edge synthesis is evaluated via Structural Similarity Index (SSIM: 0.941) and Fréchet Drawing Distance (FDD: 11.2).
+          </p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+  // Interactive Style Option Selection
+  const styles = [
+    { id: 'style-pencil', name: 'Fine Pencil', grade: '2B Medium-Soft', density: 'Medium (0.48 lp/mm)', strokes: '42,800' },
+    { id: 'style-ink', name: 'Technical Ink', grade: '0.18mm Pigment', density: 'High (0.82 lp/mm)', strokes: '28,140' },
+    { id: 'style-charcoal', name: 'Tonal Charcoal', grade: 'Soft Vine 4B', density: 'Coarse (0.24 lp/mm)', strokes: '19,500' }
+  ];
+
+  styles.forEach(item => {
+    const el = document.getElementById(item.id);
+    if (!el) return;
+    el.addEventListener('click', () => {
+      styles.forEach(s => {
+        const otherEl = document.getElementById(s.id);
+        if (otherEl) {
+          otherEl.classList.remove('bg-surface-container-low', 'shadow-sm');
+          otherEl.classList.add('bg-surface-container-lowest');
+          const circle = otherEl.querySelector('div:first-child');
+          if (circle) circle.className = 'mt-0.5 w-4 h-4 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0';
+          const badge = otherEl.querySelector('span.px-1\\.5');
+          if (badge) badge.remove();
+        }
+      });
+      el.classList.add('bg-surface-container-low', 'shadow-sm');
+      el.classList.remove('bg-surface-container-lowest');
+      const circle = el.querySelector('div:first-child');
+      if (circle) {
+        circle.className = 'mt-0.5 w-4 h-4 rounded-full bg-primary flex items-center justify-center flex-shrink-0';
+        circle.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>';
+      }
+    });
+  });
+
+  // Micro interaction for generate button
+  const generateBtn = document.getElementById('btn-generate');
+  if (generateBtn) {
+    generateBtn.addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Processing Contours...</span>';
+      this.classList.add('opacity-80', 'pointer-events-none');
+      setTimeout(() => {
+        this.innerHTML = originalText;
+        this.classList.remove('opacity-80', 'pointer-events-none');
+      }, 700);
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-space-md"><div class="w-full px-gutter-desktop flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant"><span>CS4065 Deep Generative Computer Vision Research Bench</span><span>Evaluation Framework v2.4 // PyTorch Core Runtime</span></div></footer></body></html>

@@ -1,0 +1,26 @@
+{
+  "source_archive": "stitch_ai_image_restoration_sketching_studio.zip",
+  "source_sha256": "9ff53a00945afbfc6a102cfb922b75ee791881c1ae24088ab77332261184806b",
+  "received_and_implemented_on": "2026-10-04",
+  "provenance": "User supplied Google Stitch export. Generation date and original prompt were not independently available. Original HTML/screenshots/design document preserved unchanged.",
+  "implementation": "React app revised using supplied layout, emerald/pale-blue palette, lab header, workspace navigation, controls and result panels; actual ONNX models and timings replace prototype examples.",
+  "files": {
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_success_state_mobile/code.html": "ddeb96936b6b16232256b26966dd0facd77fd25610e1987166fd225c7fd714f8",
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_success_state_mobile/screen.png": "d4259684f6b54b5c1ffdde0323e0aed2dc85dd63944e40a431d589223edd8ace",
+    "stitch_ai_image_restoration_sketching_studio/synthetica_research_console/DESIGN.md": "aac41cdd4bfae2358e189c1889bf313276dbe92f2e233526ad81951dc793222f",
+    "stitch_ai_image_restoration_sketching_studio/close_up_macro_photograph_of_a_vibrant_pink_dahlia_flower_with_intricate/screen.png": "d761944cf8ab3b2eff453d977acf17bb2c6c349571bcdc450a4fb8c87ef2e3f2",
+    "stitch_ai_image_restoration_sketching_studio/hard_routed_restoration_desktop/code.html": "b23b0dbea9ea97e87a4e479736d44bc20b8d4803aa0a43310d54202788df3a7c",
+    "stitch_ai_image_restoration_sketching_studio/hard_routed_restoration_desktop/screen.png": "e538ca4fb209dd98c241ce631aad4726c65fd816af05c0bfc53b57628bae92a3",
+    "stitch_ai_image_restoration_sketching_studio/detailed_fine_pencil_sketch_and_contour_graphite_drawing_of_a_blooming_rose/screen.png": "df2ecd59243eb0b9c1143b021f46015d0b090ea052c82c7dcf5e9fb807fa1614",
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_desktop/code.html": "f928584c8773ec56ba70e655afc31e21f305ea7ddbd2f40ec88b05bd80901361",
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_desktop/screen.png": "7c117af3ba45a0e8b540acca486e9ae51660a3869687d608dddd3b7bfa423790",
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_empty_state_mobile/code.html": "145a4400257b46e14759e6ed9a29840b0ae571992b668c5d286bcc68d3052a04",
+    "stitch_ai_image_restoration_sketching_studio/universal_restoration_empty_state_mobile/screen.png": "579e6449b7a413e0f7f795af0282d9fe46fc95b408b358d2d5b5910458e39d82",
+    "stitch_ai_image_restoration_sketching_studio/cs4065_vision_lab_logo/code.html": "cc6300700e36f150fc31aad266b4d86cb2643658a543c8df0a018d47a7f16c1f",
+    "stitch_ai_image_restoration_sketching_studio/cs4065_vision_lab_logo/screen.png": "f7d306505639504c7cc662df0fc04a5b575c1cdc03fdbba6a90ec26a31a48ab5",
+    "stitch_ai_image_restoration_sketching_studio/object_to_sketch_generator_desktop/code.html": "5e72c14d8d3d71d993a45a48a590a72c04fd07ec88ac7a1ba2d477d9074c1da3",
+    "stitch_ai_image_restoration_sketching_studio/object_to_sketch_generator_desktop/screen.png": "515ac7780672c2d0809b3cfe3fb0a3add08f259b17872fdbea67abdde060b7dc",
+    "stitch_ai_image_restoration_sketching_studio/soft_moe_restoration_desktop/code.html": "1619ab4e3dfc12118be51042f714026fd86671f44d039ae38f65eceeaa7e7441",
+    "stitch_ai_image_restoration_sketching_studio/soft_moe_restoration_desktop/screen.png": "4321c69b3bf5f0b9c55672c4890534786358bcbef98b55e367bc20063df504a5"
+  }
+}
