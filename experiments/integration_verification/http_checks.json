@@ -13,84 +13,84 @@
       "condition": "clean",
       "status": 200,
       "output_sha256": "2ca1c4d0734f5048cf895546f6584d9b28c0f4ce33bdb53fd80b95a26b2f1950",
-      "inference_ms": 4.365102999145165
+      "inference_ms": 2.8686799996648915
     },
     {
       "endpoint": "universal-restoration",
       "condition": "salt_and_pepper",
       "status": 200,
       "output_sha256": "2cfc0147d7e7193a1ae4256faf7de484530d7d4e3a9098d42e45bb0a1b808ba8",
-      "inference_ms": 3.5201560021960177
+      "inference_ms": 1.745130997733213
     },
     {
       "endpoint": "universal-restoration",
       "condition": "gaussian_blur",
       "status": 200,
       "output_sha256": "1ea754cb8e38de5f566e736811c796b8cb1c2cf4d06f83d63ce51bcaeacb36f1",
-      "inference_ms": 2.570900003775023
+      "inference_ms": 1.6253990033874288
     },
     {
       "endpoint": "universal-restoration",
       "condition": "rectangular_occlusion",
       "status": 200,
       "output_sha256": "0960ee89821fe4b1ca3f4f1ae2d5d990027683783b16caf0db16ae913a116f03",
-      "inference_ms": 1.8839339973055758
+      "inference_ms": 1.521995996881742
     },
     {
       "endpoint": "hard-routed-restoration",
       "condition": "clean",
       "status": 200,
       "output_sha256": "e2e085682f90437a4e42580a11ddb5239e5268ca49ec79e71072ef65f02571e7",
-      "inference_ms": 0.7569209992652759
+      "inference_ms": 0.6794009968871251
     },
     {
       "endpoint": "hard-routed-restoration",
       "condition": "salt_and_pepper",
       "status": 200,
       "output_sha256": "767c6c675fabd8d488e47bc364ae92b2b4278c42f5ac27525e3cdd28220e8392",
-      "inference_ms": 5.896627000765875
+      "inference_ms": 5.044890000135638
     },
     {
       "endpoint": "hard-routed-restoration",
       "condition": "gaussian_blur",
       "status": 200,
       "output_sha256": "5b758bb60ea1a7a1cfb34ff56725c6bf8e7020b10b9f591d9a8b4fcb85a03a09",
-      "inference_ms": 10.86426900292281
+      "inference_ms": 5.060294999566395
     },
     {
       "endpoint": "hard-routed-restoration",
       "condition": "rectangular_occlusion",
       "status": 200,
       "output_sha256": "8aef13d807f0af103d119080bd86b046cd13f22904afe3b793fb3fdf58328efa",
-      "inference_ms": 8.994380004878622
+      "inference_ms": 5.151578996446915
     },
     {
       "endpoint": "soft-moe-restoration",
       "condition": "clean",
       "status": 200,
       "output_sha256": "ef3c032b0ba116529c389bbf6325d2c7cd48de77259e0ddee7635e09cbf9a2c1",
-      "inference_ms": 21.799759000714403
+      "inference_ms": 17.373000002407935
     },
     {
       "endpoint": "soft-moe-restoration",
       "condition": "salt_and_pepper",
       "status": 200,
       "output_sha256": "d1bf70924b5c646f8b4b262a9842bb344c46d77da2bc3ba4225bf87f1f0ec3f5",
-      "inference_ms": 14.81005400273716
+      "inference_ms": 18.14716400258476
     },
     {
       "endpoint": "soft-moe-restoration",
       "condition": "gaussian_blur",
       "status": 200,
       "output_sha256": "e16d1e633210b2f31962d6e59961db9595a1645a628e922626ce1fc463385044",
-      "inference_ms": 11.844339001982007
+      "inference_ms": 10.051596000266727
     },
     {
       "endpoint": "soft-moe-restoration",
       "condition": "rectangular_occlusion",
       "status": 200,
       "output_sha256": "7c8b8f94238b1691406766b4ece2c934432f696e5561294e63bdd0befdf83165",
-      "inference_ms": 8.545525000954513
+      "inference_ms": 9.663873999670614
     },
     {
       "endpoint": "object-to-sketch",

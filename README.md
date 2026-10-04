@@ -1,23 +1,26 @@
 # Generative AI assignment: four integrated workspaces
 
 This checkout implements the adapted Flowers102 pipeline and all four tasks. The reviewed
-trained models are installed: Task 1 Run A, Task 2 classifier and specialists, Task 3 joint
+trained models are packaged: Task 1 Run A, Task 2 classifier and specialists, Task 3 joint
 checkpoint, and Task 4 epoch 53. See [final integration and launch instructions](docs/final_integration.md).
 
 The frozen official-test comparison is complete (61,490 restoration views and 1,068
 sketch pairs). The [IEEE paper](report/main.pdf), [LaTeX source](report/main.tex),
 [submission handoff](docs/submission_steps.md), [demo script](docs/demo_script.md),
-and [Stitch brief](docs/stitch_design_brief.md) are prepared. Repository destination:
-https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator. This destination is not
-proof of publication. GitHub/model release, genuine Stitch evidence, unlisted demo
-upload and Classroom submission still require the author's accounts.
+and [preserved Stitch export](report/stitch/) are included. The app follows the supplied
+Stitch design with four functional workspaces, responsive controls, routing displays,
+and real inference results. Source and frozen weights are published in this public
+repository. The personal demo video and Classroom submission remain to be completed.
 
 ## Fresh clone: run with Docker
 
-Obtain `trained_models.zip` from the author's published release and extract it in
-the repository root so `models/release.json` exists. **Model download link is pending
-publication**; the local package is in `submission/trained_models.zip` in the original
-workspace. Neither datasets nor weights are committed to source.
+The repository includes the frozen [ONNX model package](artifacts/trained_models.zip)
+and [PyTorch checkpoints](artifacts/checkpoints/). The
+[direct model download](https://raw.githubusercontent.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator/main/artifacts/trained_models.zip)
+is public. Extract `artifacts/trained_models.zip` into the repository root with an
+archive manager or `unzip artifacts/trained_models.zip`, producing `models/release.json`.
+Verify hashes using `sha256sum -c artifacts/SHA256SUMS.txt` from the repository root.
+Datasets are downloaded/prepared by the setup container rather than committed.
 
 ```bash
 docker compose --profile setup run --rm --build prepare-data
@@ -38,8 +41,15 @@ were built and exercised. Current verification is recorded in `docs/final_integr
 ## Frozen results and experiment records
 
 The submission source package copies final JSON/CSV/figures to
-`experiments/final_test/`. Repeating evaluation requires the separate checkpoint
-package and the prepared official dataset:
+`experiments/final_test/`. Repeating evaluation requires the prepared official dataset and the committed
+checkpoints copied to their expected location:
+
+```bash
+mkdir -p runs/integration/staging
+cp -r artifacts/checkpoints runs/integration/staging/
+```
+
+Run evaluation in the research Python environment:
 
 ```bash
 venv/bin/python scripts/final_evaluation.py --threads 8

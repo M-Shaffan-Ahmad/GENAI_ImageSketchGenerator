@@ -96,7 +96,7 @@ venv/bin/python scripts/verify_integration.py
 
 `NODE_BINARY` can specify a Node executable. The script starts its own local web
 server and separate headless Chrome profile and stops both afterward. Ports 18080
-and 9227 must be free.
+and 9227 must be free; `VERIFY_WEB_PORT` and `VERIFY_CHROME_PORT` override them.
 
 ## Task 4 numerical export resolution
 
@@ -132,8 +132,12 @@ also built and reproduced all expected model provenance fingerprints.
 Final held-out evaluation of the frozen selected models is complete: 61,490
 restoration cases and 1,068 sketch pairs. The IEEE report with failure examples
 and AI-use appendix is prepared in `report/main.tex` and compiled to `report/main.pdf`.
-Actual Stitch design provenance, authenticated repository/model publication, and
-the demo video remain user-controlled submission work. See `docs/submission_steps.md`.
+The supplied Stitch export is preserved in `report/stitch/`; the app was revised
+to match it and verified through production desktop/mobile browser checks, including
+actual file upload and switching back to samples. Source, ONNX models and selected
+PyTorch checkpoints are published in the public GitHub repository. The personal
+demo recording/YouTube upload and Classroom submission remain. See
+`docs/submission_steps.md`.
 Historical test results for the older vector
 baseline must not be presented as measurements of these selected models. Existing
 restoration and sketch quality limitations remain unchanged by integration.

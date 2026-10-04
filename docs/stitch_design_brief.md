@@ -1,3 +1,7 @@
+> Update: the supplied Stitch export has now been implemented. See
+> `report/stitch/provenance.json` and the updated app screenshots. This brief is
+> a prepared prompt, not a verified record of the export's original generation prompt.
+
 # Copyable Google Stitch design brief
 
 Create an academic browser application called **Generative AI Image Restoration

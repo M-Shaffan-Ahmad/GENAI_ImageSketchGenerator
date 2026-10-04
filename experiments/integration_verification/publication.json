@@ -1,0 +1,9 @@
+{
+  "repository_url": "https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator",
+  "public_repository_http_status": 200,
+  "model_download_url": "https://raw.githubusercontent.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator/main/artifacts/trained_models.zip",
+  "model_sha256": "05fbe349383a222fc3b4ede0e68c737e0509a8f3af6591d7b5dd1a2338b665c1",
+  "all_internal_release_hashes_verified": true,
+  "commit_with_models": "571f253",
+  "verified_on": "2026-10-04"
+}

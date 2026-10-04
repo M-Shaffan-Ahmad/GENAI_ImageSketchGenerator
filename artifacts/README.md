@@ -17,7 +17,6 @@ mkdir -p runs/integration/staging
 cp -r artifacts/checkpoints runs/integration/staging/
 ```
 
-The repository currently requires authenticated access. Make it public or grant
-access to the evaluator. A raw model URL works for signed-out readers only after
-the repository is public. GitHub Releases remain an optional alternative; no
-release was created through an API in this session.
+The repository is public. Download links are listed in the root README.
+GitHub Releases remain an optional alternative; no release was created through
+an API in this session.

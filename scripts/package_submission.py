@@ -48,23 +48,15 @@ def main():
     shutil.copytree(ROOT/'runs/integration/browser',verify/'browser',dirs_exist_ok=True)
     for name in ['independent_export_check.json','full_validation_export_check.json']:
         shutil.copy2(ROOT/'runs/task4/review'/name,verify/name)
-    status=dict(author='Muhammad Shaffan Ahmad',student_id='23i-0673',section='A',university='FAST NUCES',
-        completed=['four trained tasks and integrated app','61490 frozen restoration test cases','1068 frozen sketch test pairs',
-                   'IEEE double-column LaTeX paper and compiled PDF','ONNX provenance/parity','23 automated tests',
-                   'production desktop/mobile browser checks','Docker build/start/inference','data setup container and fingerprints',
-                   'original Optuna studies and labeled MLflow evidence imports','source/model/checkpoint/report archives'],
-        pending=['authenticated GitHub source publication','published model/checkpoint release URLs',
-                 'genuine Google Stitch design evidence','personal demo recording and unlisted YouTube upload',
-                 'update pending paper links and evidence then recompile','author review and Google Classroom submission'],
-        repository_destination='https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator',
-        repository_published_in_this_session=False,stitch_provenance_created=False,demo_recorded=False,classroom_submitted=False,
-        instructions='docs/submission_steps.md')
+    status=json.loads((ROOT/'docs/submission_status.json').read_text())
     (OUT/'status.json').write_text(json.dumps(status,indent=2)+'\n')
     (ROOT/'experiments/submission_status.json').write_text(json.dumps(status,indent=2)+'\n')
     sources=[]
     roots=['task1','task2','task3','task4','configs','tests','backend','data_prep','scripts','docs','experiments']
     for directory in roots:
         for path in safe_files(ROOT/directory):sources.append((path,path.relative_to(ROOT)))
+    sources.append((ROOT/'artifacts/README.md','artifacts/README.md'))
+    if (ROOT/'artifacts/SHA256SUMS.txt').exists():sources.append((ROOT/'artifacts/SHA256SUMS.txt','artifacts/SHA256SUMS.txt'))
     for name in ['README.md','requirements.txt','requirements.lock.txt','prepare_dataset.py','dataset_loaders.py','corruptions.py',
                  'package_colab.py','integrate_models.py','docker-compose.yml','run_app.sh','.gitignore','.dockerignore']:
         sources.append((ROOT/name,name))
