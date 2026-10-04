@@ -1,0 +1,8 @@
+Muhammad Shaffan Ahmad | 23i-0673 | Section A | FAST NUCES
+CS4065 Generative AI: Image Restoration and Sketch Generator
+
+Repository: https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator
+Video: https://www.youtube.com/live/1NpOTGTbwuc
+Models: https://raw.githubusercontent.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator/main/artifacts/trained_models.zip
+
+Attach the final report/main.pdf to the assignment. Add any additional files specifically requested by the instructor.

@@ -12,8 +12,9 @@ claim of peer-reviewed publication or a novel architecture.
 The supplied Stitch export is preserved in `stitch/` and illustrated in the paper;
 the updated application screenshots show the implemented revision. The public
 repository includes the selected ONNX model package and PyTorch checkpoints.
-Before submission, record/upload the personal demonstration, replace the pending
-video link in `submission_metadata.tex`, recompile and personally review the PDF.
+The author's uploaded video link is now in `submission_metadata.tex` and the
+compiled PDF. Before submission, check playback while signed out and personally
+review the final PDF.
 Follow `docs/submission_steps.md` for the remaining account steps.
 
 Compile with pdfLaTeX twice, or Tectonic. XeLaTeX mode uses bundled Nimbus fonts. With

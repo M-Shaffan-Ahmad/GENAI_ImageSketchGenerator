@@ -10,7 +10,7 @@ sketch pairs). The [IEEE paper](report/main.pdf), [LaTeX source](report/main.tex
 and [preserved Stitch export](report/stitch/) are included. The app follows the supplied
 Stitch design with four functional workspaces, responsive controls, routing displays,
 and real inference results. Source and frozen weights are published in this public
-repository. The personal demo video and Classroom submission remain to be completed.
+repository. The [demonstration video](https://www.youtube.com/live/1NpOTGTbwuc) is supplied by the author. Final author review and Classroom submission remain.
 
 ## Fresh clone: run with Docker
 

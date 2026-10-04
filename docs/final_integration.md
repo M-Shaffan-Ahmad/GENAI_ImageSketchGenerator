@@ -135,8 +135,8 @@ and AI-use appendix is prepared in `report/main.tex` and compiled to `report/mai
 The supplied Stitch export is preserved in `report/stitch/`; the app was revised
 to match it and verified through production desktop/mobile browser checks, including
 actual file upload and switching back to samples. Source, ONNX models and selected
-PyTorch checkpoints are published in the public GitHub repository. The personal
-demo recording/YouTube upload and Classroom submission remain. See
+PyTorch checkpoints are published in the public GitHub repository. The author supplied the uploaded demonstration URL, which is now included in
+the paper. Final author review, signed-out playback check and Classroom submission remain. See
 `docs/submission_steps.md`.
 Historical test results for the older vector
 baseline must not be presented as measurements of these selected models. Existing

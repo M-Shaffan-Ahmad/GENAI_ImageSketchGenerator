@@ -5,7 +5,8 @@ Public repository: https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator
 
 The four trained tasks, integrated Stitch-style app, frozen test evaluation,
 experiment evidence, Docker setup, IEEE paper and public source/model publication
-are complete. The personal video and Classroom submission remain.
+are complete. The author has supplied the uploaded video URL, which has been
+added to the paper. Final review and Classroom submission remain.
 
 ## Ready files
 
@@ -50,59 +51,27 @@ numbers are not real model measurements. Desktop/mobile checks, actual browser
 upload, sample switching, all four workspaces and three sketch styles passed.
 The paper distinguishes the original supplied design from working app screenshots.
 
-## 3. Record and upload the 5–7 minute demonstration
+## 3. Demonstration link — supplied and added to the paper
 
-This remains yours to complete: a personal recording/narration and authenticated
-YouTube upload were not available in this session. Follow `docs/demo_script.md`;
-aim for six minutes and show the real terminal and browser using OBS or your
-usual screen recorder.
+https://www.youtube.com/live/1NpOTGTbwuc
 
-Include startup, image upload, corruption controls, all four tasks, hard routing,
-soft weights, three sketch styles, PNG download, MLflow/Optuna evidence and an
-honest limitation. Show actual inference and explain the 128px model resolution.
+The author supplied this uploaded demonstration link. It is included in
+`report/submission_metadata.tex` and the recompiled PDF. Automated web access
+could not fetch YouTube, so playback, visibility, duration and content were not
+independently verified here. Before submission, open the link in an incognito
+window while signed out. Confirm it plays completely, meets the assignment's
+5–7 minute duration, and shows the required tasks. Set visibility to Unlisted
+or Public so the evaluator can view it; Private requires separate viewer access.
 
-Start the app:
+## 4. Final paper — recompiled with the video link
 
-```bash
-# Current machine: 8080 is occupied. These alternate ports were verified.
-FRONTEND_PORT=18081 BACKEND_PORT=18082 docker compose up --build
-```
+Use the latest `report/main.pdf`. It includes repository, model and video links.
+Read the PDF personally, verify your identity and all links, and check figures,
+methods, losses, measured results, limitations and the AI-use appendix.
 
-Open http://localhost:18081. On a clean evaluator machine, defaults are 8080/8000.
-Show tracking in another terminal (research environment required):
-
-```bash
-venv/bin/python scripts/relocate_tracking.py
-venv/bin/mlflow ui --backend-store-uri sqlite:///experiments/tracking.db --host 127.0.0.1 --port 5000
-```
-
-Open http://localhost:5000. Training histories are labeled retrospective imports
-of original Colab records; the final test record is identified separately. Original
-Optuna databases are preserved in `experiments/optuna/`.
-
-Upload through YouTube Studio and select **Unlisted**. Check the link signed out.
-Replace only the video entry in `report/submission_metadata.tex`:
-
-```tex
-\newcommand{\DemoVideoLink}{\url{YOUR_ACTUAL_UNLISTED_YOUTUBE_URL}}
-```
-
-## 4. Recompile and personally review the paper
-
-After adding your video URL, upload `ieee_report_source.zip` to Overleaf, choose
-`main.tex` and pdfLaTeX, compile and download the final PDF. Locally:
-
-```bash
-cd report
-pdflatex main.tex
-pdflatex main.tex
-```
-
-The source also works with Tectonic. Review your name/ID, working URLs, figures,
-losses, routing, synthetic sketch targets, measured failures and AI-use appendix.
-Update the sentence about the pending personal demonstration once it is uploaded.
-Commit the updated LaTeX and PDF back to GitHub. The currently compiled PDF is
-ready for review but honestly marks the video as pending.
+The refreshed `submission/ieee_report_source.zip` can be imported into Overleaf
+with `main.tex` and pdfLaTeX if you need another edit. No recompilation is needed
+unless you change the report or URLs.
 
 ## 5. Evaluator's fresh-clone path
 

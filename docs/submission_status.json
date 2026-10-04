@@ -18,20 +18,24 @@
     "supplied Stitch export preserved and implemented in responsive app",
     "public GitHub source and frozen ONNX/PyTorch artifacts",
     "signed-out repository access verified",
-    "public model download matched archive and internal release hashes"
+    "public model download matched archive and internal release hashes",
+    "demonstration upload link supplied by author",
+    "video URL added to final IEEE paper"
   ],
   "pending": [
-    "personal demo recording and unlisted YouTube upload",
-    "add video URL and recompile paper",
-    "author review and Google Classroom submission"
+    "author review of final PDF and signed-out video playback",
+    "Google Classroom submission"
   ],
   "repository_destination": "https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator",
   "repository_published_in_this_session": true,
   "stitch_provenance_created": true,
-  "demo_recorded": false,
+  "demo_recorded": true,
   "classroom_submitted": false,
   "instructions": "docs/submission_steps.md",
   "repository_public_verified": true,
   "model_download_url": "https://raw.githubusercontent.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator/main/artifacts/trained_models.zip",
-  "model_download_verified_sha256": "05fbe349383a222fc3b4ede0e68c737e0509a8f3af6591d7b5dd1a2338b665c1"
+  "model_download_verified_sha256": "05fbe349383a222fc3b4ede0e68c737e0509a8f3af6591d7b5dd1a2338b665c1",
+  "demo_uploaded_reported_by_author": true,
+  "demo_url": "https://www.youtube.com/live/1NpOTGTbwuc",
+  "demo_access_independently_verified": false
 }
