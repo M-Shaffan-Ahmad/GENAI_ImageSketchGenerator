@@ -1,0 +1,109 @@
+{
+  "split": "test",
+  "limited": false,
+  "smoke_checkpoint": false,
+  "epoch": 53,
+  "config": {
+    "base_channels": 32,
+    "dropout": 0.04184815819561255,
+    "embedding_dim": 16,
+    "generator_learning_rate": 0.0003836576984791727,
+    "discriminator_learning_rate": 0.00022219602542548883,
+    "lambda_l1": 42.22210912154244,
+    "batch_size": 16,
+    "epochs": 60,
+    "seed": 42
+  },
+  "manifest_sha256": "055d9cef95187e85cb582def57cd03c6871d58df233363b91865c6faac77a432",
+  "checkpoint_sha256": "e9c48c296dec0427f4c85d302cae90a4a19eb3d399b5814872d1702efef374a9",
+  "metrics": {
+    "Fine Pencil": {
+      "n": 356,
+      "l1": 0.03469699525452229,
+      "ssim": 0.9019519438904323,
+      "psnr": 24.80928605460049,
+      "blank_l1": 0.11388778395615937,
+      "blank_ssim": 0.2827148905463433,
+      "blank_psnr": 14.199861016166345
+    },
+    "Technical Ink": {
+      "n": 356,
+      "l1": 0.16304808153948758,
+      "ssim": 0.527243532072962,
+      "psnr": 8.314687221237783,
+      "blank_l1": 0.41589578349938555,
+      "blank_ssim": 0.1400167754337223,
+      "blank_psnr": 4.080635948127576
+    },
+    "Tonal Charcoal": {
+      "n": 356,
+      "l1": 0.037594660501822495,
+      "ssim": 0.8182576648639829,
+      "psnr": 14.867037004299378,
+      "blank_l1": 0.21604302224148525,
+      "blank_ssim": 0.2909560475885617,
+      "blank_psnr": 6.874792054128111
+    }
+  },
+  "complete_style_comparison_photos": 356,
+  "style_diversity": {
+    "1-2": {
+      "generated_l1": 0.42354179881094545,
+      "target_l1": 0.44065914822093555
+    },
+    "1-3": {
+      "generated_l1": 0.1770466807392541,
+      "target_l1": 0.18402123173928997
+    },
+    "2-3": {
+      "generated_l1": 0.4195932974473814,
+      "target_l1": 0.4288127770584621
+    }
+  },
+  "failure_candidates": [
+    {
+      "source_id": 5229,
+      "style_id": 2,
+      "style": "Technical Ink",
+      "l1": 0.26543131470680237,
+      "ssim": 0.2779359221458435,
+      "psnr": 6.026213645935059,
+      "blank_l1": 0.77935791015625,
+      "blank_ssim": 0.0029509193263947964,
+      "blank_psnr": 1.0826305150985718
+    },
+    {
+      "source_id": 7313,
+      "style_id": 2,
+      "style": "Technical Ink",
+      "l1": 0.2615368068218231,
+      "ssim": 0.3505297899246216,
+      "psnr": 6.095048904418945,
+      "blank_l1": 0.74267578125,
+      "blank_ssim": 0.0023685472551733255,
+      "blank_psnr": 1.2920074462890625
+    },
+    {
+      "source_id": 2562,
+      "style_id": 2,
+      "style": "Technical Ink",
+      "l1": 0.248016819357872,
+      "ssim": 0.4003041684627533,
+      "psnr": 6.309469223022461,
+      "blank_l1": 0.65423583984375,
+      "blank_ssim": 0.0028951705899089575,
+      "blank_psnr": 1.8426567316055298
+    },
+    {
+      "source_id": 4011,
+      "style_id": 2,
+      "style": "Technical Ink",
+      "l1": 0.24786001443862915,
+      "ssim": 0.36973702907562256,
+      "psnr": 6.3146562576293945,
+      "blank_l1": 0.6375732421875,
+      "blank_ssim": 0.0080223698168993,
+      "blank_psnr": 1.954699158668518
+    }
+  ]
+}

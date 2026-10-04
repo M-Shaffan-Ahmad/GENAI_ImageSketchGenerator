@@ -1,0 +1,32 @@
+services:
+  prepare-data:
+    profiles: [setup]
+    build:
+      context: .
+      dockerfile: data_prep/Dockerfile
+    volumes:
+      - ./raw_data:/app/raw_data
+      - ./data:/app/data
+      - ./models:/app/models:ro
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      MODEL_PATH: /app/models/universal.onnx
+      TASK2_MODEL_DIR: /app/models/task2
+      TASK3_MODEL_PATH: /app/models/task3/soft_moe.onnx
+      TASK4_MODEL_PATH: /app/models/task4/sketch_generator.onnx
+      DATA_ROOT: /app/data/prepared_v2/restoration
+    volumes:
+      - ./models:/app/models:ro
+      - ./data/prepared_v2:/app/data/prepared_v2:ro
+      - ./raw_data:/app/raw_data:ro
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+  frontend:
+    build: ./frontend
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      - backend

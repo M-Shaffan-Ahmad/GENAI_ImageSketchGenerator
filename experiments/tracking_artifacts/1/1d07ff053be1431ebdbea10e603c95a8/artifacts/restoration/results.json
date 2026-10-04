@@ -1,0 +1,1122 @@
+{
+  "split": "test",
+  "limited": false,
+  "smoke_checkpoint": false,
+  "cases": 61490,
+  "unique_photos": 6149,
+  "manifest_sha256": "8b317c01dd7e39a7999d51ed3ed4970b1116a63805b2ec36ba0cba29c2457881",
+  "selection_frozen_release_sha256": "798c48799f87bbfec7c8f9f9621516f0d8f46a0777912a31df4cafbee69226e4",
+  "selected_epochs": {
+    "task1": 60,
+    "task2": {
+      "classifier": 18,
+      "salt_and_pepper": 55,
+      "gaussian_blur": 60,
+      "rectangular_occlusion": 58
+    },
+    "task3": 21
+  },
+  "checkpoint_sha256": {
+    "task1": "bac27813d502ff6274737c6f2b4424e69fa55d2ec004e55dcb9a8e28afa71089",
+    "task2": {
+      "classifier": "65589c59300919c8aaad9f60ea9457063cf56cc8e80e3a986b7052cfa7b83cd6",
+      "salt_and_pepper": "d788ae7a8f1528b709f4a01ec95fc7c0c115a4e1d58c61aea7fb0e542f390d03",
+      "gaussian_blur": "7be25ea1a99d56093839d76b18e4f87a6ebe25cdbd6ef1536982319d9afa8c59",
+      "rectangular_occlusion": "43829ad40c55bb7583b8543fab4a78d99bf26bcd025cc6453e9d0bf99783d5ee"
+    },
+    "task3": "7e6bac6960305a21cbc2e36557918e8b1e955840246638283ccc08d6b03eef26"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cpu",
+    "processor": "x86_64",
+    "device": "cpu",
+    "threads": 8,
+    "batch_size": 32
+  },
+  "elapsed_seconds": 1531.6756342959998,
+  "classifier": {
+    "accuracy": 0.9736379899170596,
+    "macro_f1": 0.9590491669643741,
+    "per_class_f1": [
+      0.8820332011164977,
+      0.9999728945870491,
+      0.9579586330935251,
+      0.9962319390604245
+    ],
+    "support": [
+      6149,
+      18447,
+      18447,
+      18447
+    ],
+    "confusion_matrix": [
+      [
+        6004,
+        0,
+        91,
+        54
+      ],
+      [
+        0,
+        18446,
+        0,
+        1
+      ],
+      [
+        1391,
+        0,
+        17044,
+        12
+      ],
+      [
+        70,
+        0,
+        2,
+        18375
+      ]
+    ],
+    "normalized_confusion_matrix": [
+      [
+        0.976418929907302,
+        0.0,
+        0.014799154334038054,
+        0.008781915758659945
+      ],
+      [
+        0.0,
+        0.9999457906434651,
+        0.0,
+        5.420935653493793e-05
+      ],
+      [
+        0.07540521494009866,
+        0.0,
+        0.9239442727814821,
+        0.0006505122784192552
+      ],
+      [
+        0.003794654957445655,
+        0.0,
+        0.00010841871306987586,
+        0.9960969263294844
+      ]
+    ]
+  },
+  "gate_dominant_class_metrics": {
+    "accuracy": 0.9190274841437632,
+    "macro_f1": 0.8903293984927381,
+    "per_class_f1": [
+      0.7120315581854043,
+      1.0,
+      0.8697596080232736,
+      0.9795264277622745
+    ],
+    "support": [
+      6149,
+      18447,
+      18447,
+      18447
+    ],
+    "confusion_matrix": [
+      [
+        6137,
+        0,
+        4,
+        8
+      ],
+      [
+        0,
+        18447,
+        0,
+        0
+      ],
+      [
+        4234,
+        0,
+        14201,
+        12
+      ],
+      [
+        718,
+        0,
+        3,
+        17726
+      ]
+    ],
+    "normalized_confusion_matrix": [
+      [
+        0.9980484631647423,
+        0.0,
+        0.0006505122784192552,
+        0.0013010245568385104
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.2295224155689272,
+        0.0,
+        0.7698270721526536,
+        0.0006505122784192552
+      ],
+      [
+        0.03892231799208543,
+        0.0,
+        0.0001626280696048138,
+        0.9609150539383098
+      ]
+    ]
+  },
+  "metrics": {
+    "clean/none": {
+      "n": 6149,
+      "input": {
+        "l1": 0.0,
+        "ssim": 1.0,
+        "psnr": 120.0
+      },
+      "universal": {
+        "l1": 0.02872788009731619,
+        "ssim": 0.8794311200783377,
+        "psnr": 27.99989974430895,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "oracle": {
+        "l1": 0.0,
+        "ssim": 1.0,
+        "psnr": 120.0,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "hard": {
+        "l1": 0.0005794140577054563,
+        "ssim": 0.997282867306402,
+        "psnr": 117.84742224509202,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "soft": {
+        "l1": 0.0010515762162894827,
+        "ssim": 0.999047627505645,
+        "psnr": 59.95176146130849,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "mean_weights": {
+        "clean": 0.9575542941153932,
+        "salt_and_pepper": 0.0009851683004896497,
+        "gaussian_blur": 0.01820188606400113,
+        "rectangular_occlusion": 0.023258651776297132
+      },
+      "routing_accuracy": 0.976418929907302,
+      "cascading_failures": 145
+    },
+    "salt_and_pepper/low": {
+      "n": 6149,
+      "input": {
+        "l1": 0.015005903529507016,
+        "ssim": 0.6090001058124841,
+        "psnr": 19.905608972973464
+      },
+      "universal": {
+        "l1": 0.029930341475052375,
+        "ssim": 0.8678383465646088,
+        "psnr": 27.66563629526339,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6131
+      },
+      "oracle": {
+        "l1": 0.027182175923707738,
+        "ssim": 0.8878310495400782,
+        "psnr": 28.356503261591598,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6139
+      },
+      "hard": {
+        "l1": 0.027193072807073476,
+        "ssim": 0.8877757388627671,
+        "psnr": 28.354309545297664,
+        "psnr_better_than_input": 6148,
+        "both_metrics_better_than_input": 6138
+      },
+      "soft": {
+        "l1": 0.025647826277865812,
+        "ssim": 0.8973498248262974,
+        "psnr": 28.88687501672536,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6148
+      },
+      "mean_weights": {
+        "clean": 0.023298051265168467,
+        "salt_and_pepper": 0.976407011527708,
+        "gaussian_blur": 1.4795726834326788e-09,
+        "rectangular_occlusion": 0.0002949363079530031
+      },
+      "routing_accuracy": 0.9998373719303952,
+      "cascading_failures": 1
+    },
+    "salt_and_pepper/medium": {
+      "n": 6149,
+      "input": {
+        "l1": 0.040007244900370595,
+        "ssim": 0.34367717565763556,
+        "psnr": 15.642202336374464
+      },
+      "universal": {
+        "l1": 0.03252841937111091,
+        "ssim": 0.8430686167806779,
+        "psnr": 26.958948311563002,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "oracle": {
+        "l1": 0.028368892323526837,
+        "ssim": 0.8783335192627316,
+        "psnr": 27.988429512933397,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "hard": {
+        "l1": 0.028368892323526837,
+        "ssim": 0.8783335192627316,
+        "psnr": 27.988429512933397,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "soft": {
+        "l1": 0.02696593071169428,
+        "ssim": 0.8871144060973016,
+        "psnr": 28.4243063558348,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "mean_weights": {
+        "clean": 0.005064784956937971,
+        "salt_and_pepper": 0.9949330588165658,
+        "gaussian_blur": 5.4943674240496735e-14,
+        "rectangular_occlusion": 2.15663930697043e-06
+      },
+      "routing_accuracy": 1.0,
+      "cascading_failures": 0
+    },
+    "salt_and_pepper/high": {
+      "n": 6149,
+      "input": {
+        "l1": 0.0749984790717495,
+        "ssim": 0.20640479996594438,
+        "psnr": 12.911846526290638
+      },
+      "universal": {
+        "l1": 0.037051744429961966,
+        "ssim": 0.7995252756204697,
+        "psnr": 25.8438492385832,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "oracle": {
+        "l1": 0.030791665942348015,
+        "ssim": 0.8599033513908988,
+        "psnr": 27.299840810493176,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "hard": {
+        "l1": 0.030791665942348015,
+        "ssim": 0.8599033513908988,
+        "psnr": 27.299840810493176,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "soft": {
+        "l1": 0.029012364439864987,
+        "ssim": 0.8698652617367987,
+        "psnr": 27.772577512514342,
+        "psnr_better_than_input": 6149,
+        "both_metrics_better_than_input": 6149
+      },
+      "mean_weights": {
+        "clean": 0.000876942510706903,
+        "salt_and_pepper": 0.9991230530106047,
+        "gaussian_blur": 2.462473896991592e-19,
+        "rectangular_occlusion": 5.951257287962959e-09
+      },
+      "routing_accuracy": 1.0,
+      "cascading_failures": 0
+    },
+    "gaussian_blur/low": {
+      "n": 6149,
+      "input": {
+        "l1": 0.013040905958064267,
+        "ssim": 0.9639022895952107,
+        "psnr": 33.68983516671402
+      },
+      "universal": {
+        "l1": 0.028609311518620274,
+        "ssim": 0.8766924941863523,
+        "psnr": 28.040262837703878,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "oracle": {
+        "l1": 0.026541300766972153,
+        "ssim": 0.8922456327851835,
+        "psnr": 28.6055025540245,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "hard": {
+        "l1": 0.023275306644215017,
+        "ssim": 0.9097367245446455,
+        "psnr": 29.671623797004912,
+        "psnr_better_than_input": 0,
+        "both_metrics_better_than_input": 0
+      },
+      "soft": {
+        "l1": 0.016221976752295558,
+        "ssim": 0.9488054215374914,
+        "psnr": 32.40653727542755,
+        "psnr_better_than_input": 987,
+        "both_metrics_better_than_input": 305
+      },
+      "mean_weights": {
+        "clean": 0.578945374611876,
+        "salt_and_pepper": 3.3637393715798058e-06,
+        "gaussian_blur": 0.39988031109145517,
+        "rectangular_occlusion": 0.021170950815875847
+      },
+      "routing_accuracy": 0.7739469832493089,
+      "cascading_failures": 12
+    },
+    "gaussian_blur/medium": {
+      "n": 6149,
+      "input": {
+        "l1": 0.027776503295389728,
+        "ssim": 0.848491227816791,
+        "psnr": 27.364390561049074
+      },
+      "universal": {
+        "l1": 0.032749096005258375,
+        "ssim": 0.8314266188161357,
+        "psnr": 26.73652700230947,
+        "psnr_better_than_input": 1461,
+        "both_metrics_better_than_input": 811
+      },
+      "oracle": {
+        "l1": 0.026730053805955,
+        "ssim": 0.8844424048406861,
+        "psnr": 28.433330247723624,
+        "psnr_better_than_input": 5304,
+        "both_metrics_better_than_input": 5208
+      },
+      "hard": {
+        "l1": 0.026734210249078353,
+        "ssim": 0.884403097840863,
+        "psnr": 28.431465548448475,
+        "psnr_better_than_input": 5295,
+        "both_metrics_better_than_input": 5199
+      },
+      "soft": {
+        "l1": 0.02406219757077369,
+        "ssim": 0.8982540691338975,
+        "psnr": 29.266106356913763,
+        "psnr_better_than_input": 6000,
+        "both_metrics_better_than_input": 5966
+      },
+      "mean_weights": {
+        "clean": 0.2162353642091608,
+        "salt_and_pepper": 8.424419455757645e-07,
+        "gaussian_blur": 0.7736794629810806,
+        "rectangular_occlusion": 0.010084330020345181
+      },
+      "routing_accuracy": 0.9980484631647423,
+      "cascading_failures": 9
+    },
+    "gaussian_blur/high": {
+      "n": 6149,
+      "input": {
+        "l1": 0.039898654711968164,
+        "ssim": 0.7249935078735292,
+        "psnr": 24.467047590068695
+      },
+      "universal": {
+        "l1": 0.04207211637929758,
+        "ssim": 0.7293073894638689,
+        "psnr": 24.48505766672087,
+        "psnr_better_than_input": 3715,
+        "both_metrics_better_than_input": 3323
+      },
+      "oracle": {
+        "l1": 0.0364446338827442,
+        "ssim": 0.775199753498717,
+        "psnr": 25.511297378254667,
+        "psnr_better_than_input": 6013,
+        "both_metrics_better_than_input": 6003
+      },
+      "hard": {
+        "l1": 0.03644556553974072,
+        "ssim": 0.7751917184843515,
+        "psnr": 25.511107825209287,
+        "psnr_better_than_input": 6012,
+        "both_metrics_better_than_input": 6002
+      },
+      "soft": {
+        "l1": 0.03378399924594278,
+        "ssim": 0.7932854572007823,
+        "psnr": 26.101611503877763,
+        "psnr_better_than_input": 6134,
+        "both_metrics_better_than_input": 6132
+      },
+      "mean_weights": {
+        "clean": 0.13935200872066633,
+        "salt_and_pepper": 5.897274435744151e-07,
+        "gaussian_blur": 0.8535503553246886,
+        "rectangular_occlusion": 0.007097046554340318
+      },
+      "routing_accuracy": 0.9998373719303952,
+      "cascading_failures": 1
+    },
+    "rectangular_occlusion/low": {
+      "n": 6149,
+      "input": {
+        "l1": 0.04176525555554784,
+        "ssim": 0.859301165015276,
+        "psnr": 16.822035933882457
+      },
+      "universal": {
+        "l1": 0.038344952452168714,
+        "ssim": 0.8144792600421716,
+        "psnr": 23.862612102686594,
+        "psnr_better_than_input": 6029,
+        "both_metrics_better_than_input": 1002
+      },
+      "oracle": {
+        "l1": 0.0353244435516816,
+        "ssim": 0.8397817238498886,
+        "psnr": 24.53916835707365,
+        "psnr_better_than_input": 6062,
+        "both_metrics_better_than_input": 2108
+      },
+      "hard": {
+        "l1": 0.035173838080665355,
+        "ssim": 0.8402981248051582,
+        "psnr": 24.518002305191345,
+        "psnr_better_than_input": 6010,
+        "both_metrics_better_than_input": 2098
+      },
+      "soft": {
+        "l1": 0.028401444668738163,
+        "ssim": 0.8831779309299287,
+        "psnr": 24.781441879768764,
+        "psnr_better_than_input": 6127,
+        "both_metrics_better_than_input": 5281
+      },
+      "mean_weights": {
+        "clean": 0.34863712948077985,
+        "salt_and_pepper": 0.0006255323046918633,
+        "gaussian_blur": 0.0025110458997807507,
+        "rectangular_occlusion": 0.6482262920705182
+      },
+      "routing_accuracy": 0.988616035127663,
+      "cascading_failures": 52
+    },
+    "rectangular_occlusion/medium": {
+      "n": 6149,
+      "input": {
+        "l1": 0.0793858866426463,
+        "ssim": 0.7343429160866433,
+        "psnr": 13.738086625839136
+      },
+      "universal": {
+        "l1": 0.04846138437123323,
+        "ssim": 0.7525859954522323,
+        "psnr": 21.49619196558177,
+        "psnr_better_than_input": 6117,
+        "both_metrics_better_than_input": 3987
+      },
+      "oracle": {
+        "l1": 0.043610287715730424,
+        "ssim": 0.7843205652928659,
+        "psnr": 22.214174705824245,
+        "psnr_better_than_input": 6135,
+        "both_metrics_better_than_input": 5098
+      },
+      "hard": {
+        "l1": 0.04360050213086855,
+        "ssim": 0.7843527354095249,
+        "psnr": 22.215640383360736,
+        "psnr_better_than_input": 6134,
+        "both_metrics_better_than_input": 5097
+      },
+      "soft": {
+        "l1": 0.03894867494600559,
+        "ssim": 0.8107858404316036,
+        "psnr": 22.580955425807762,
+        "psnr_better_than_input": 6145,
+        "both_metrics_better_than_input": 6047
+      },
+      "mean_weights": {
+        "clean": 0.21606460076923834,
+        "salt_and_pepper": 0.00027787001672321677,
+        "gaussian_blur": 0.0010230336218458485,
+        "rectangular_occlusion": 0.7826344954795926
+      },
+      "routing_accuracy": 0.9996747438607904,
+      "cascading_failures": 1
+    },
+    "rectangular_occlusion/high": {
+      "n": 6149,
+      "input": {
+        "l1": 0.13755483859609272,
+        "ssim": 0.5487309422875288,
+        "psnr": 11.225713899609016
+      },
+      "universal": {
+        "l1": 0.06363497256983061,
+        "ssim": 0.661780415501783,
+        "psnr": 19.375391560776443,
+        "psnr_better_than_input": 6144,
+        "both_metrics_better_than_input": 5912
+      },
+      "oracle": {
+        "l1": 0.05589109082771552,
+        "ssim": 0.7029758581670829,
+        "psnr": 20.159805384394133,
+        "psnr_better_than_input": 6145,
+        "both_metrics_better_than_input": 6082
+      },
+      "hard": {
+        "l1": 0.05589109082771552,
+        "ssim": 0.7029758581670829,
+        "psnr": 20.159805384394133,
+        "psnr_better_than_input": 6145,
+        "both_metrics_better_than_input": 6082
+      },
+      "soft": {
+        "l1": 0.053908810196094524,
+        "ssim": 0.7142621889882484,
+        "psnr": 20.21923272220812,
+        "psnr_better_than_input": 6148,
+        "both_metrics_better_than_input": 6126
+      },
+      "mean_weights": {
+        "clean": 0.17275015931715226,
+        "salt_and_pepper": 0.0003376721368231353,
+        "gaussian_blur": 0.0010369654264399415,
+        "rectangular_occlusion": 0.8258752029229808
+      },
+      "routing_accuracy": 1.0,
+      "cascading_failures": 0
+    }
+  },
+  "failure_candidates": {
+    "universal": [
+      {
+        "source_id": 6901,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.27710625529289246,
+        "input_ssim": 0.5534507632255554,
+        "input_psnr": 6.161652088165283,
+        "universal_l1": 0.13814367353916168,
+        "universal_ssim": 0.690053403377533,
+        "universal_psnr": 11.590188980102539,
+        "oracle_l1": 0.11783773452043533,
+        "oracle_ssim": 0.7390219569206238,
+        "oracle_psnr": 12.576847076416016,
+        "hard_l1": 0.11783773452043533,
+        "hard_ssim": 0.7390219569206238,
+        "hard_psnr": 12.576847076416016,
+        "soft_l1": 0.10961062461137772,
+        "soft_ssim": 0.742301881313324,
+        "soft_psnr": 12.895255088806152,
+        "weight_clean": 0.09049548208713531,
+        "weight_salt_and_pepper": 8.114869706332684e-05,
+        "weight_gaussian_blur": 1.1719701120682657e-07,
+        "weight_rectangular_occlusion": 0.9094232320785522,
+        "probability_clean": 3.083622089226565e-14,
+        "probability_salt_and_pepper": 3.7037921693386724e-14,
+        "probability_gaussian_blur": 2.062141339704023e-27,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3340,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.04347051680088043,
+        "input_ssim": 0.7930290699005127,
+        "input_psnr": 16.22018051147461,
+        "universal_l1": 0.13336652517318726,
+        "universal_ssim": 0.3577713966369629,
+        "universal_psnr": 12.902528762817383,
+        "oracle_l1": 0.1104189082980156,
+        "oracle_ssim": 0.4333248436450958,
+        "oracle_psnr": 13.984431266784668,
+        "hard_l1": 0.1104189082980156,
+        "hard_ssim": 0.4333248436450958,
+        "hard_psnr": 13.984431266784668,
+        "soft_l1": 0.0766276940703392,
+        "soft_ssim": 0.4944588840007782,
+        "soft_psnr": 16.535476684570312,
+        "weight_clean": 0.42181330919265747,
+        "weight_salt_and_pepper": 5.426874486147426e-05,
+        "weight_gaussian_blur": 0.049462128430604935,
+        "weight_rectangular_occlusion": 0.5286702513694763,
+        "probability_clean": 4.62932039226871e-05,
+        "probability_salt_and_pepper": 2.844503512733354e-07,
+        "probability_gaussian_blur": 3.2443112640834215e-09,
+        "probability_rectangular_occlusion": 0.9999533891677856
+      },
+      {
+        "source_id": 4893,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.2712729275226593,
+        "input_ssim": 0.5702587962150574,
+        "input_psnr": 6.561391830444336,
+        "universal_l1": 0.12553484737873077,
+        "universal_ssim": 0.6569232940673828,
+        "universal_psnr": 11.9435453414917,
+        "oracle_l1": 0.09951519966125488,
+        "oracle_ssim": 0.7157536745071411,
+        "oracle_psnr": 14.135737419128418,
+        "hard_l1": 0.09951519966125488,
+        "hard_ssim": 0.7157536745071411,
+        "hard_psnr": 14.135737419128418,
+        "soft_l1": 0.0917746052145958,
+        "soft_ssim": 0.7294506430625916,
+        "soft_psnr": 14.900012016296387,
+        "weight_clean": 0.12702110409736633,
+        "weight_salt_and_pepper": 3.231679875170812e-05,
+        "weight_gaussian_blur": 3.3509986678836867e-06,
+        "weight_rectangular_occlusion": 0.8729432225227356,
+        "probability_clean": 4.2527166141913264e-14,
+        "probability_salt_and_pepper": 4.566479572948312e-13,
+        "probability_gaussian_blur": 1.7220964524210906e-27,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 4576,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.22862742841243744,
+        "input_ssim": 0.5724776387214661,
+        "input_psnr": 7.295536994934082,
+        "universal_l1": 0.12477996200323105,
+        "universal_ssim": 0.6769433617591858,
+        "universal_psnr": 12.841415405273438,
+        "oracle_l1": 0.10270597785711288,
+        "oracle_ssim": 0.7203594446182251,
+        "oracle_psnr": 14.790664672851562,
+        "hard_l1": 0.10270597785711288,
+        "hard_ssim": 0.7203594446182251,
+        "hard_psnr": 14.790664672851562,
+        "soft_l1": 0.10180135816335678,
+        "soft_ssim": 0.7113500833511353,
+        "soft_psnr": 14.947542190551758,
+        "weight_clean": 0.1382816731929779,
+        "weight_salt_and_pepper": 0.00012107456132071093,
+        "weight_gaussian_blur": 2.378281465098553e-07,
+        "weight_rectangular_occlusion": 0.861596941947937,
+        "probability_clean": 4.777588047399917e-12,
+        "probability_salt_and_pepper": 7.804250995446793e-11,
+        "probability_gaussian_blur": 1.6855367051578021e-21,
+        "probability_rectangular_occlusion": 1.0
+      }
+    ],
+    "oracle": [
+      {
+        "source_id": 6901,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.27710625529289246,
+        "input_ssim": 0.5534507632255554,
+        "input_psnr": 6.161652088165283,
+        "universal_l1": 0.13814367353916168,
+        "universal_ssim": 0.690053403377533,
+        "universal_psnr": 11.590188980102539,
+        "oracle_l1": 0.11783773452043533,
+        "oracle_ssim": 0.7390219569206238,
+        "oracle_psnr": 12.576847076416016,
+        "hard_l1": 0.11783773452043533,
+        "hard_ssim": 0.7390219569206238,
+        "hard_psnr": 12.576847076416016,
+        "soft_l1": 0.10961062461137772,
+        "soft_ssim": 0.742301881313324,
+        "soft_psnr": 12.895255088806152,
+        "weight_clean": 0.09049548208713531,
+        "weight_salt_and_pepper": 8.114869706332684e-05,
+        "weight_gaussian_blur": 1.1719701120682657e-07,
+        "weight_rectangular_occlusion": 0.9094232320785522,
+        "probability_clean": 3.083622089226565e-14,
+        "probability_salt_and_pepper": 3.7037921693386724e-14,
+        "probability_gaussian_blur": 2.062141339704023e-27,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3340,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.04347051680088043,
+        "input_ssim": 0.7930290699005127,
+        "input_psnr": 16.22018051147461,
+        "universal_l1": 0.13336652517318726,
+        "universal_ssim": 0.3577713966369629,
+        "universal_psnr": 12.902528762817383,
+        "oracle_l1": 0.1104189082980156,
+        "oracle_ssim": 0.4333248436450958,
+        "oracle_psnr": 13.984431266784668,
+        "hard_l1": 0.1104189082980156,
+        "hard_ssim": 0.4333248436450958,
+        "hard_psnr": 13.984431266784668,
+        "soft_l1": 0.0766276940703392,
+        "soft_ssim": 0.4944588840007782,
+        "soft_psnr": 16.535476684570312,
+        "weight_clean": 0.42181330919265747,
+        "weight_salt_and_pepper": 5.426874486147426e-05,
+        "weight_gaussian_blur": 0.049462128430604935,
+        "weight_rectangular_occlusion": 0.5286702513694763,
+        "probability_clean": 4.62932039226871e-05,
+        "probability_salt_and_pepper": 2.844503512733354e-07,
+        "probability_gaussian_blur": 3.2443112640834215e-09,
+        "probability_rectangular_occlusion": 0.9999533891677856
+      },
+      {
+        "source_id": 1209,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.22488398849964142,
+        "input_ssim": 0.5558589696884155,
+        "input_psnr": 7.777276039123535,
+        "universal_l1": 0.10864478349685669,
+        "universal_ssim": 0.6227254867553711,
+        "universal_psnr": 13.741016387939453,
+        "oracle_l1": 0.10572544485330582,
+        "oracle_ssim": 0.6453569531440735,
+        "oracle_psnr": 14.095781326293945,
+        "hard_l1": 0.10572544485330582,
+        "hard_ssim": 0.6453569531440735,
+        "hard_psnr": 14.095781326293945,
+        "soft_l1": 0.09900740534067154,
+        "soft_ssim": 0.6605294942855835,
+        "soft_psnr": 14.528196334838867,
+        "weight_clean": 0.1683928668498993,
+        "weight_salt_and_pepper": 0.0002377978089498356,
+        "weight_gaussian_blur": 1.6678989140928024e-06,
+        "weight_rectangular_occlusion": 0.8313676714897156,
+        "probability_clean": 1.423448273314698e-12,
+        "probability_salt_and_pepper": 4.649104712317609e-11,
+        "probability_gaussian_blur": 2.633182865530163e-22,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3591,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.2167634516954422,
+        "input_ssim": 0.5497326850891113,
+        "input_psnr": 7.5071516036987305,
+        "universal_l1": 0.11076297610998154,
+        "universal_ssim": 0.6301862001419067,
+        "universal_psnr": 13.436162948608398,
+        "oracle_l1": 0.10325002670288086,
+        "oracle_ssim": 0.6687278747558594,
+        "oracle_psnr": 13.861845970153809,
+        "hard_l1": 0.10325002670288086,
+        "hard_ssim": 0.6687278747558594,
+        "hard_psnr": 13.861845970153809,
+        "soft_l1": 0.10064191371202469,
+        "soft_ssim": 0.6717605590820312,
+        "soft_psnr": 14.237422943115234,
+        "weight_clean": 0.12940938770771027,
+        "weight_salt_and_pepper": 4.1484381654299796e-05,
+        "weight_gaussian_blur": 2.931051767518511e-06,
+        "weight_rectangular_occlusion": 0.8705462217330933,
+        "probability_clean": 3.457088131389452e-12,
+        "probability_salt_and_pepper": 1.0509952283466184e-12,
+        "probability_gaussian_blur": 2.5720477862062173e-22,
+        "probability_rectangular_occlusion": 1.0
+      }
+    ],
+    "hard": [
+      {
+        "source_id": 6901,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.27710625529289246,
+        "input_ssim": 0.5534507632255554,
+        "input_psnr": 6.161652088165283,
+        "universal_l1": 0.13814367353916168,
+        "universal_ssim": 0.690053403377533,
+        "universal_psnr": 11.590188980102539,
+        "oracle_l1": 0.11783773452043533,
+        "oracle_ssim": 0.7390219569206238,
+        "oracle_psnr": 12.576847076416016,
+        "hard_l1": 0.11783773452043533,
+        "hard_ssim": 0.7390219569206238,
+        "hard_psnr": 12.576847076416016,
+        "soft_l1": 0.10961062461137772,
+        "soft_ssim": 0.742301881313324,
+        "soft_psnr": 12.895255088806152,
+        "weight_clean": 0.09049548208713531,
+        "weight_salt_and_pepper": 8.114869706332684e-05,
+        "weight_gaussian_blur": 1.1719701120682657e-07,
+        "weight_rectangular_occlusion": 0.9094232320785522,
+        "probability_clean": 3.083622089226565e-14,
+        "probability_salt_and_pepper": 3.7037921693386724e-14,
+        "probability_gaussian_blur": 2.062141339704023e-27,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3340,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.04347051680088043,
+        "input_ssim": 0.7930290699005127,
+        "input_psnr": 16.22018051147461,
+        "universal_l1": 0.13336652517318726,
+        "universal_ssim": 0.3577713966369629,
+        "universal_psnr": 12.902528762817383,
+        "oracle_l1": 0.1104189082980156,
+        "oracle_ssim": 0.4333248436450958,
+        "oracle_psnr": 13.984431266784668,
+        "hard_l1": 0.1104189082980156,
+        "hard_ssim": 0.4333248436450958,
+        "hard_psnr": 13.984431266784668,
+        "soft_l1": 0.0766276940703392,
+        "soft_ssim": 0.4944588840007782,
+        "soft_psnr": 16.535476684570312,
+        "weight_clean": 0.42181330919265747,
+        "weight_salt_and_pepper": 5.426874486147426e-05,
+        "weight_gaussian_blur": 0.049462128430604935,
+        "weight_rectangular_occlusion": 0.5286702513694763,
+        "probability_clean": 4.62932039226871e-05,
+        "probability_salt_and_pepper": 2.844503512733354e-07,
+        "probability_gaussian_blur": 3.2443112640834215e-09,
+        "probability_rectangular_occlusion": 0.9999533891677856
+      },
+      {
+        "source_id": 1209,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.22488398849964142,
+        "input_ssim": 0.5558589696884155,
+        "input_psnr": 7.777276039123535,
+        "universal_l1": 0.10864478349685669,
+        "universal_ssim": 0.6227254867553711,
+        "universal_psnr": 13.741016387939453,
+        "oracle_l1": 0.10572544485330582,
+        "oracle_ssim": 0.6453569531440735,
+        "oracle_psnr": 14.095781326293945,
+        "hard_l1": 0.10572544485330582,
+        "hard_ssim": 0.6453569531440735,
+        "hard_psnr": 14.095781326293945,
+        "soft_l1": 0.09900740534067154,
+        "soft_ssim": 0.6605294942855835,
+        "soft_psnr": 14.528196334838867,
+        "weight_clean": 0.1683928668498993,
+        "weight_salt_and_pepper": 0.0002377978089498356,
+        "weight_gaussian_blur": 1.6678989140928024e-06,
+        "weight_rectangular_occlusion": 0.8313676714897156,
+        "probability_clean": 1.423448273314698e-12,
+        "probability_salt_and_pepper": 4.649104712317609e-11,
+        "probability_gaussian_blur": 2.633182865530163e-22,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3591,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.2167634516954422,
+        "input_ssim": 0.5497326850891113,
+        "input_psnr": 7.5071516036987305,
+        "universal_l1": 0.11076297610998154,
+        "universal_ssim": 0.6301862001419067,
+        "universal_psnr": 13.436162948608398,
+        "oracle_l1": 0.10325002670288086,
+        "oracle_ssim": 0.6687278747558594,
+        "oracle_psnr": 13.861845970153809,
+        "hard_l1": 0.10325002670288086,
+        "hard_ssim": 0.6687278747558594,
+        "hard_psnr": 13.861845970153809,
+        "soft_l1": 0.10064191371202469,
+        "soft_ssim": 0.6717605590820312,
+        "soft_psnr": 14.237422943115234,
+        "weight_clean": 0.12940938770771027,
+        "weight_salt_and_pepper": 4.1484381654299796e-05,
+        "weight_gaussian_blur": 2.931051767518511e-06,
+        "weight_rectangular_occlusion": 0.8705462217330933,
+        "probability_clean": 3.457088131389452e-12,
+        "probability_salt_and_pepper": 1.0509952283466184e-12,
+        "probability_gaussian_blur": 2.5720477862062173e-22,
+        "probability_rectangular_occlusion": 1.0
+      }
+    ],
+    "soft": [
+      {
+        "source_id": 6901,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.27710625529289246,
+        "input_ssim": 0.5534507632255554,
+        "input_psnr": 6.161652088165283,
+        "universal_l1": 0.13814367353916168,
+        "universal_ssim": 0.690053403377533,
+        "universal_psnr": 11.590188980102539,
+        "oracle_l1": 0.11783773452043533,
+        "oracle_ssim": 0.7390219569206238,
+        "oracle_psnr": 12.576847076416016,
+        "hard_l1": 0.11783773452043533,
+        "hard_ssim": 0.7390219569206238,
+        "hard_psnr": 12.576847076416016,
+        "soft_l1": 0.10961062461137772,
+        "soft_ssim": 0.742301881313324,
+        "soft_psnr": 12.895255088806152,
+        "weight_clean": 0.09049548208713531,
+        "weight_salt_and_pepper": 8.114869706332684e-05,
+        "weight_gaussian_blur": 1.1719701120682657e-07,
+        "weight_rectangular_occlusion": 0.9094232320785522,
+        "probability_clean": 3.083622089226565e-14,
+        "probability_salt_and_pepper": 3.7037921693386724e-14,
+        "probability_gaussian_blur": 2.062141339704023e-27,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 4576,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.22862742841243744,
+        "input_ssim": 0.5724776387214661,
+        "input_psnr": 7.295536994934082,
+        "universal_l1": 0.12477996200323105,
+        "universal_ssim": 0.6769433617591858,
+        "universal_psnr": 12.841415405273438,
+        "oracle_l1": 0.10270597785711288,
+        "oracle_ssim": 0.7203594446182251,
+        "oracle_psnr": 14.790664672851562,
+        "hard_l1": 0.10270597785711288,
+        "hard_ssim": 0.7203594446182251,
+        "hard_psnr": 14.790664672851562,
+        "soft_l1": 0.10180135816335678,
+        "soft_ssim": 0.7113500833511353,
+        "soft_psnr": 14.947542190551758,
+        "weight_clean": 0.1382816731929779,
+        "weight_salt_and_pepper": 0.00012107456132071093,
+        "weight_gaussian_blur": 2.378281465098553e-07,
+        "weight_rectangular_occlusion": 0.861596941947937,
+        "probability_clean": 4.777588047399917e-12,
+        "probability_salt_and_pepper": 7.804250995446793e-11,
+        "probability_gaussian_blur": 1.6855367051578021e-21,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 3591,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.2167634516954422,
+        "input_ssim": 0.5497326850891113,
+        "input_psnr": 7.5071516036987305,
+        "universal_l1": 0.11076297610998154,
+        "universal_ssim": 0.6301862001419067,
+        "universal_psnr": 13.436162948608398,
+        "oracle_l1": 0.10325002670288086,
+        "oracle_ssim": 0.6687278747558594,
+        "oracle_psnr": 13.861845970153809,
+        "hard_l1": 0.10325002670288086,
+        "hard_ssim": 0.6687278747558594,
+        "hard_psnr": 13.861845970153809,
+        "soft_l1": 0.10064191371202469,
+        "soft_ssim": 0.6717605590820312,
+        "soft_psnr": 14.237422943115234,
+        "weight_clean": 0.12940938770771027,
+        "weight_salt_and_pepper": 4.1484381654299796e-05,
+        "weight_gaussian_blur": 2.931051767518511e-06,
+        "weight_rectangular_occlusion": 0.8705462217330933,
+        "probability_clean": 3.457088131389452e-12,
+        "probability_salt_and_pepper": 1.0509952283466184e-12,
+        "probability_gaussian_blur": 2.5720477862062173e-22,
+        "probability_rectangular_occlusion": 1.0
+      },
+      {
+        "source_id": 1209,
+        "condition": "rectangular_occlusion",
+        "severity": "high",
+        "true_label": 3,
+        "predicted_label": 3,
+        "dominant_label": 3,
+        "input_l1": 0.22488398849964142,
+        "input_ssim": 0.5558589696884155,
+        "input_psnr": 7.777276039123535,
+        "universal_l1": 0.10864478349685669,
+        "universal_ssim": 0.6227254867553711,
+        "universal_psnr": 13.741016387939453,
+        "oracle_l1": 0.10572544485330582,
+        "oracle_ssim": 0.6453569531440735,
+        "oracle_psnr": 14.095781326293945,
+        "hard_l1": 0.10572544485330582,
+        "hard_ssim": 0.6453569531440735,
+        "hard_psnr": 14.095781326293945,
+        "soft_l1": 0.09900740534067154,
+        "soft_ssim": 0.6605294942855835,
+        "soft_psnr": 14.528196334838867,
+        "weight_clean": 0.1683928668498993,
+        "weight_salt_and_pepper": 0.0002377978089498356,
+        "weight_gaussian_blur": 1.6678989140928024e-06,
+        "weight_rectangular_occlusion": 0.8313676714897156,
+        "probability_clean": 1.423448273314698e-12,
+        "probability_salt_and_pepper": 4.649104712317609e-11,
+        "probability_gaussian_blur": 2.633182865530163e-22,
+        "probability_rectangular_occlusion": 1.0
+      }
+    ]
+  }
+}

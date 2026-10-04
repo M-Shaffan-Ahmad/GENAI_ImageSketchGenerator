@@ -1,0 +1,102 @@
+{
+  "checkpoint_epoch": 53,
+  "smoke": false,
+  "manifest_verified": true,
+  "checkpoint_hash_verified": true,
+  "onnx_hash_verified": true,
+  "onnx_checker_passed": true,
+  "validation_by_style": [
+    4,
+    4,
+    4
+  ],
+  "rtol": 0.0001,
+  "atol": 2e-05,
+  "cases": [
+    {
+      "source_id": 7371,
+      "style": "Fine Pencil",
+      "max_absolute_error": 1.1146068572998047e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 7371,
+      "style": "Technical Ink",
+      "max_absolute_error": 5.257129669189453e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 7371,
+      "style": "Tonal Charcoal",
+      "max_absolute_error": 8.553266525268555e-05,
+      "outside_tolerance": 4,
+      "passed": false
+    },
+    {
+      "source_id": 6800,
+      "style": "Fine Pencil",
+      "max_absolute_error": 1.049041748046875e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 6800,
+      "style": "Technical Ink",
+      "max_absolute_error": 3.781914710998535e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 6800,
+      "style": "Tonal Charcoal",
+      "max_absolute_error": 8.189678192138672e-05,
+      "outside_tolerance": 2,
+      "passed": false
+    },
+    {
+      "source_id": 4608,
+      "style": "Fine Pencil",
+      "max_absolute_error": 9.238719940185547e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 4608,
+      "style": "Technical Ink",
+      "max_absolute_error": 4.851818084716797e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 4608,
+      "style": "Tonal Charcoal",
+      "max_absolute_error": 5.945563316345215e-05,
+      "outside_tolerance": 6,
+      "passed": false
+    },
+    {
+      "source_id": 6825,
+      "style": "Fine Pencil",
+      "max_absolute_error": 7.748603820800781e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 6825,
+      "style": "Technical Ink",
+      "max_absolute_error": 5.173683166503906e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "source_id": 6825,
+      "style": "Tonal Charcoal",
+      "max_absolute_error": 9.268522262573242e-05,
+      "outside_tolerance": 4,
+      "passed": false
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,33 @@
+{
+  "author": "Muhammad Shaffan Ahmad",
+  "student_id": "23i-0673",
+  "section": "A",
+  "university": "FAST NUCES",
+  "completed": [
+    "four trained tasks and integrated app",
+    "61490 frozen restoration test cases",
+    "1068 frozen sketch test pairs",
+    "IEEE double-column LaTeX paper and compiled PDF",
+    "ONNX provenance/parity",
+    "23 automated tests",
+    "production desktop/mobile browser checks",
+    "Docker build/start/inference",
+    "data setup container and fingerprints",
+    "original Optuna studies and labeled MLflow evidence imports",
+    "source/model/checkpoint/report archives"
+  ],
+  "pending": [
+    "authenticated GitHub source publication",
+    "published model/checkpoint release URLs",
+    "genuine Google Stitch design evidence",
+    "personal demo recording and unlisted YouTube upload",
+    "update pending paper links and evidence then recompile",
+    "author review and Google Classroom submission"
+  ],
+  "repository_destination": "https://github.com/M-Shaffan-Ahmad/GENAI_ImageSketchGenerator",
+  "repository_published_in_this_session": false,
+  "stitch_provenance_created": false,
+  "demo_recorded": false,
+  "classroom_submitted": false,
+  "instructions": "docs/submission_steps.md"
+}

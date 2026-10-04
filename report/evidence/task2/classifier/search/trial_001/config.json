@@ -1,0 +1,9 @@
+{
+  "base_channels": 16,
+  "dropout": 0.004116898859160489,
+  "learning_rate": 0.00012184186502221769,
+  "weight_decay": 0.00757947995334801,
+  "batch_size": 32,
+  "epochs": 5,
+  "seed": 42
+}

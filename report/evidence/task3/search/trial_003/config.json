@@ -1,0 +1,13 @@
+{
+  "temperature": 0.9534698963770735,
+  "lambda_l1": 0.6641915784487018,
+  "lambda_ssim": 0.3358084215512982,
+  "lambda_ce": 0.03647316284911211,
+  "lambda_balance": 0.0004678719265016201,
+  "warmup_learning_rate": 0.0003,
+  "learning_rate": 4.029695576831728e-05,
+  "warmup_epochs": 1,
+  "joint_epochs": 3,
+  "batch_size": 16,
+  "seed": 42
+}

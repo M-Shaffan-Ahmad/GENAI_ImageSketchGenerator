@@ -1,0 +1,18 @@
+{
+  "manifest_sha256": "055d9cef95187e85cb582def57cd03c6871d58df233363b91865c6faac77a432",
+  "styles": [
+    "Fine Pencil",
+    "Technical Ink",
+    "Tonal Charcoal"
+  ],
+  "pairs_by_split": {
+    "train": 4458,
+    "val": 786,
+    "test": 1068
+  },
+  "photos_by_split": {
+    "train": 1486,
+    "val": 262,
+    "test": 356
+  }
+}

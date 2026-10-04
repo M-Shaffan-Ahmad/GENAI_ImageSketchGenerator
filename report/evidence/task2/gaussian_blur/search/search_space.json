@@ -1,0 +1,27 @@
+{
+  "learning_rate": [
+    0.0001,
+    0.003
+  ],
+  "batch_size": [
+    16,
+    32
+  ],
+  "base_channels": [
+    16,
+    32,
+    48
+  ],
+  "bottleneck_dim": [
+    8192,
+    16384
+  ],
+  "dropout": [
+    0.0,
+    0.1
+  ],
+  "alpha": [
+    0.5,
+    0.9
+  ]
+}

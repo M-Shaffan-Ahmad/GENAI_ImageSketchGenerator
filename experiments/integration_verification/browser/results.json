@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "workspace": 0,
+      "style": null,
+      "title": "Universal Restoration",
+      "figures": 4,
+      "weights": 0,
+      "passed": true
+    },
+    {
+      "workspace": 1,
+      "style": null,
+      "title": "Hard-Routed Restoration",
+      "figures": 4,
+      "weights": 4,
+      "passed": true
+    },
+    {
+      "workspace": 2,
+      "style": null,
+      "title": "Soft Mixture-of-Experts Restoration",
+      "figures": 4,
+      "weights": 4,
+      "passed": true
+    },
+    {
+      "workspace": 3,
+      "style": 1,
+      "title": "Object-to-Sketch Generator",
+      "figures": 2,
+      "weights": 0,
+      "passed": true
+    },
+    {
+      "workspace": 3,
+      "style": 2,
+      "title": "Object-to-Sketch Generator",
+      "figures": 2,
+      "weights": 0,
+      "passed": true
+    },
+    {
+      "workspace": 3,
+      "style": 3,
+      "title": "Object-to-Sketch Generator",
+      "figures": 2,
+      "weights": 0,
+      "passed": true
+    }
+  ],
+  "browserExceptions": [],
+  "viewports": [
+    1365,
+    390
+  ]
+}

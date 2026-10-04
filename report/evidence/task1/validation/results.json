@@ -1,0 +1,89 @@
+{
+  "split": "val",
+  "limited": false,
+  "smoke_checkpoint": false,
+  "metrics": {
+    "clean/sampled": {
+      "n": 102,
+      "l1": 0.02892232847893063,
+      "ssim": 0.8769249378466139,
+      "psnr": 27.957092004663803,
+      "input_l1": 0.0,
+      "input_ssim": 1.0,
+      "input_psnr": 120.0
+    },
+    "salt_and_pepper/sampled": {
+      "n": 102,
+      "l1": 0.03382720909647498,
+      "ssim": 0.8310166796048483,
+      "psnr": 26.628499835145238,
+      "input_l1": 0.045755851009458885,
+      "input_ssim": 0.35729389776493986,
+      "input_psnr": 15.644510493558997
+    },
+    "gaussian_blur/sampled": {
+      "n": 102,
+      "l1": 0.03345863629753391,
+      "ssim": 0.8312518748582578,
+      "psnr": 26.72409766328101,
+      "input_l1": 0.02558210084908733,
+      "input_ssim": 0.8687353800324833,
+      "input_psnr": 28.745029748654833
+    },
+    "rectangular_occlusion/sampled": {
+      "n": 102,
+      "l1": 0.05267901435567468,
+      "ssim": 0.7367460791971169,
+      "psnr": 21.00039618623023,
+      "input_l1": 0.09918845700574856,
+      "input_ssim": 0.6951307566726909,
+      "input_psnr": 12.888390765470618
+    }
+  },
+  "failure_candidates": [
+    {
+      "source_id": 6931,
+      "condition": "rectangular_occlusion",
+      "severity": "sampled",
+      "l1": 0.09627332538366318,
+      "ssim": 0.6819218397140503,
+      "psnr": 16.037612915039062,
+      "input_l1": 0.25007155537605286,
+      "input_ssim": 0.6340400576591492,
+      "input_psnr": 6.481904029846191
+    },
+    {
+      "source_id": 1832,
+      "condition": "rectangular_occlusion",
+      "severity": "sampled",
+      "l1": 0.09038838744163513,
+      "ssim": 0.7063635587692261,
+      "psnr": 15.667926788330078,
+      "input_l1": 0.2196909636259079,
+      "input_ssim": 0.5464839935302734,
+      "input_psnr": 7.90806245803833
+    },
+    {
+      "source_id": 5625,
+      "condition": "rectangular_occlusion",
+      "severity": "sampled",
+      "l1": 0.08689389377832413,
+      "ssim": 0.6554570198059082,
+      "psnr": 16.529830932617188,
+      "input_l1": 0.15505124628543854,
+      "input_ssim": 0.603922426700592,
+      "input_psnr": 9.653587341308594
+    },
+    {
+      "source_id": 7495,
+      "condition": "rectangular_occlusion",
+      "severity": "sampled",
+      "l1": 0.08320740610361099,
+      "ssim": 0.6661083698272705,
+      "psnr": 16.835832595825195,
+      "input_l1": 0.14757265150547028,
+      "input_ssim": 0.6204953193664551,
+      "input_psnr": 9.862109184265137
+    }
+  ]
+}

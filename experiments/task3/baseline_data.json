@@ -1,0 +1,6 @@
+{
+  "train_manifest_sha256": "0794cec5962774c63a2f968e0cf6127ab171272598ebf33ee728a0e27a356972",
+  "validation_manifest_sha256": "787e5736195edeb3b1c2c2f057397005bf5e26d17f00a83ce6b3b54975bdca09",
+  "train_images": 1630,
+  "validation_images": 408
+}

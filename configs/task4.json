@@ -1,0 +1,11 @@
+{
+  "base_channels": 32,
+  "dropout": 0.1,
+  "embedding_dim": 8,
+  "generator_learning_rate": 0.0002,
+  "discriminator_learning_rate": 0.0002,
+  "lambda_l1": 100.0,
+  "batch_size": 16,
+  "epochs": 60,
+  "seed": 42
+}

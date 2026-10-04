@@ -1,0 +1,255 @@
+{
+  "installed_at_utc": "20261004T144645Z",
+  "selections": {
+    "task1": "Run A",
+    "task2": "reviewed classifier + three specialists",
+    "task3": "joint epoch 21",
+    "task4": "epoch 53"
+  },
+  "archives": {
+    "task1": {
+      "path": "colab/task1_run_a_results.zip",
+      "sha256": "6896abd2df880dcf8b141efaa20d3161aab1e0c5d068f3ad0d927777799db2ff"
+    },
+    "task2": {
+      "path": "colab/task2_results.zip",
+      "sha256": "d15b7fb6722c63d9ede4b58a7aa1d0dc447824db7dc312424856f95c4711908a"
+    },
+    "task3": {
+      "path": "colab/task3_results.zip",
+      "sha256": "e75951c7c314a2c796f8511c4613aca7ff50faa669f4614e57ed1d69d14e917a"
+    },
+    "task4": {
+      "path": "colab/task4_results.zip",
+      "sha256": "51929de1232e26c9b644995f8f84e9e021231e6fee579be50a71ba1fd5ca18df"
+    }
+  },
+  "files": {
+    "models/task2/classifier.onnx": "ce1fdd2374e95762bb5323f4661e86f4b0b48ca88773e461cce0f5c2be2bf7ac",
+    "models/task2/classifier.json": "9fbd5f076edcbbe950cc14643d08521a016a914aeab7526ad685740e594553a6",
+    "models/task2/salt_and_pepper.onnx": "a3ca7c48569edf42cf61804a2853f000b001fb8434938e1ecd6a78079a0818b2",
+    "models/task2/salt_and_pepper.json": "5d1a0fb08b0236f3e1338fb388a3dea54cd9fc780f1e23c6ee477109ec211c56",
+    "models/task2/gaussian_blur.onnx": "50de317f6166603fc2a4ae8968f80cd1ac4d65d897c8102fb4176639086a25d7",
+    "models/task2/gaussian_blur.json": "616ac7dd6053bf4847411320703bbd2077ca8feac51be087240110061c92b0ef",
+    "models/task2/rectangular_occlusion.onnx": "f825c9500393aa7e7418c6810e7a4f0d38d3d16985006ea65778341bcfc18776",
+    "models/task2/rectangular_occlusion.json": "7be1c263a265f2b72e973c2c58dcb7fde4d177a817d9ff4cec2776015ff50281",
+    "models/task2/pipeline.json": "cdaee77a16143dde30eef1026f6f3cffcc41e25515b4440b43636cb46d49e774",
+    "models/task3/soft_moe.onnx": "2d07d8c232e30518bcaa82cfbc40e23b49ec439aac9a59bc2047fc0c6b85d5c4",
+    "models/task3/soft_moe.json": "c00cab1ccc9c4f58e3cb7917143834074caae1421246761c3203d2bac4d54937",
+    "models/task4/sketch_generator.onnx": "623746d076117360e93c6995f7d4896f83c5b80dfd97934933443293df1d43d3",
+    "models/task4/sketch_generator.json": "df68e2becaa06c9eb29f0b64dedbf8d9ec0ab225d4681cd12c6d9f6cddf30a9a",
+    "models/universal.onnx": "4b4d43e8ca349c825bcc5aed9e884179046c67b4e7e0ba9b09940f5c60e93541",
+    "models/universal.json": "4f329ced81b281a6a604e0b6d053a4d858c747c59cd52a6fc0e859891648cf18"
+  },
+  "verification": {
+    "task1": {
+      "config": {
+        "base_channels": 32,
+        "architecture": "spatial_v2",
+        "bottleneck_dim": 16384,
+        "dropout": 0.029214464853521818,
+        "alpha": 0.6648628294821612,
+        "learning_rate": 0.0016967533607196547,
+        "batch_size": 16,
+        "epochs": 60,
+        "seed": 42
+      },
+      "smoke": false,
+      "validation_images": 16,
+      "max_absolute_error": 4.76837158203125e-07,
+      "input": "float32 NCHW [1,3,128,128], RGB [0,1], PIL bilinear resize",
+      "checkpoint": "runs/task1/run_a/final/best.pt",
+      "parity_atol": 1e-05,
+      "parity_rtol": 0.0001,
+      "passed": true,
+      "epoch": 60,
+      "checkpoint_sha256": "bac27813d502ff6274737c6f2b4424e69fa55d2ec004e55dcb9a8e28afa71089",
+      "onnx_sha256": "4b4d43e8ca349c825bcc5aed9e884179046c67b4e7e0ba9b09940f5c60e93541",
+      "selection": "Task 1 Run A",
+      "train_manifest_sha256": "0794cec5962774c63a2f968e0cf6127ab171272598ebf33ee728a0e27a356972",
+      "validation_manifest_sha256": "787e5736195edeb3b1c2c2f057397005bf5e26d17f00a83ce6b3b54975bdca09"
+    },
+    "task2": {
+      "conditions": [
+        "clean",
+        "salt_and_pepper",
+        "gaussian_blur",
+        "rectangular_occlusion"
+      ],
+      "input": "float32 NCHW [1,3,128,128], RGB [0,1], PIL bilinear resize",
+      "classifier_output": "probabilities",
+      "clean_route": "identity",
+      "components": {
+        "classifier": {
+          "config": {
+            "base_channels": 16,
+            "dropout": 0.06084844859190755,
+            "learning_rate": 0.0016967533607196547,
+            "weight_decay": 0.0001256104370001356,
+            "batch_size": 32,
+            "epochs": 20,
+            "seed": 42
+          },
+          "epoch": 18,
+          "checkpoint_sha256": "65589c59300919c8aaad9f60ea9457063cf56cc8e80e3a986b7052cfa7b83cd6",
+          "smoke": false,
+          "validation_images": 16,
+          "max_absolute_error": 1.4156103134155273e-07,
+          "onnx_sha256": "ce1fdd2374e95762bb5323f4661e86f4b0b48ca88773e461cce0f5c2be2bf7ac",
+          "parity_atol": 1e-05,
+          "parity_rtol": 0.0001,
+          "passed": true
+        },
+        "salt_and_pepper": {
+          "config": {
+            "base_channels": 48,
+            "architecture": "spatial_v2",
+            "bottleneck_dim": 16384,
+            "dropout": 0.0456069984217036,
+            "alpha": 0.5185801650879991,
+            "learning_rate": 0.0008012737503998541,
+            "batch_size": 16,
+            "epochs": 60,
+            "seed": 42,
+            "condition": "salt_and_pepper"
+          },
+          "epoch": 55,
+          "checkpoint_sha256": "d788ae7a8f1528b709f4a01ec95fc7c0c115a4e1d58c61aea7fb0e542f390d03",
+          "smoke": false,
+          "validation_images": 16,
+          "max_absolute_error": 4.76837158203125e-07,
+          "onnx_sha256": "a3ca7c48569edf42cf61804a2853f000b001fb8434938e1ecd6a78079a0818b2",
+          "parity_atol": 1e-05,
+          "parity_rtol": 0.0001,
+          "passed": true
+        },
+        "gaussian_blur": {
+          "config": {
+            "base_channels": 48,
+            "architecture": "spatial_v2",
+            "bottleneck_dim": 16384,
+            "dropout": 0.0456069984217036,
+            "alpha": 0.5185801650879991,
+            "learning_rate": 0.0008012737503998541,
+            "batch_size": 16,
+            "epochs": 60,
+            "seed": 42,
+            "condition": "gaussian_blur"
+          },
+          "epoch": 60,
+          "checkpoint_sha256": "7be25ea1a99d56093839d76b18e4f87a6ebe25cdbd6ef1536982319d9afa8c59",
+          "smoke": false,
+          "validation_images": 16,
+          "max_absolute_error": 5.364418029785156e-07,
+          "onnx_sha256": "50de317f6166603fc2a4ae8968f80cd1ac4d65d897c8102fb4176639086a25d7",
+          "parity_atol": 1e-05,
+          "parity_rtol": 0.0001,
+          "passed": true
+        },
+        "rectangular_occlusion": {
+          "config": {
+            "base_channels": 48,
+            "architecture": "spatial_v2",
+            "bottleneck_dim": 16384,
+            "dropout": 0.0456069984217036,
+            "alpha": 0.5185801650879991,
+            "learning_rate": 0.0008012737503998541,
+            "batch_size": 16,
+            "epochs": 60,
+            "seed": 42,
+            "condition": "rectangular_occlusion"
+          },
+          "epoch": 58,
+          "checkpoint_sha256": "43829ad40c55bb7583b8543fab4a78d99bf26bcd025cc6453e9d0bf99783d5ee",
+          "smoke": false,
+          "validation_images": 16,
+          "max_absolute_error": 4.172325134277344e-07,
+          "onnx_sha256": "f825c9500393aa7e7418c6810e7a4f0d38d3d16985006ea65778341bcfc18776",
+          "parity_atol": 1e-05,
+          "parity_rtol": 0.0001,
+          "passed": true
+        }
+      },
+      "smoke": false,
+      "train_manifest_sha256": "0794cec5962774c63a2f968e0cf6127ab171272598ebf33ee728a0e27a356972",
+      "validation_manifest_sha256": "787e5736195edeb3b1c2c2f057397005bf5e26d17f00a83ce6b3b54975bdca09"
+    },
+    "task3": {
+      "conditions": [
+        "clean",
+        "salt_and_pepper",
+        "gaussian_blur",
+        "rectangular_occlusion"
+      ],
+      "onnx_sha256": "2d07d8c232e30518bcaa82cfbc40e23b49ec439aac9a59bc2047fc0c6b85d5c4",
+      "validation_images": 16,
+      "max_absolute_error": 4.76837158203125e-07,
+      "parity_atol": 1e-05,
+      "parity_rtol": 0.0001,
+      "passed": true,
+      "weights_max_absolute_error": 2.384185791015625e-07,
+      "config": {
+        "temperature": 1.307309036920485,
+        "lambda_l1": 0.6072045730035308,
+        "lambda_ssim": 0.3927954269964692,
+        "lambda_ce": 0.018891200276189388,
+        "lambda_balance": 0.00026205032550962544,
+        "warmup_learning_rate": 0.0003,
+        "learning_rate": 0.00018661212048851325,
+        "warmup_epochs": 3,
+        "joint_epochs": 20,
+        "batch_size": 16,
+        "seed": 42
+      },
+      "epoch": 21,
+      "stage": "joint",
+      "smoke": false,
+      "checkpoint_sha256": "7e6bac6960305a21cbc2e36557918e8b1e955840246638283ccc08d6b03eef26",
+      "initialization_sha256": {
+        "classifier": "65589c59300919c8aaad9f60ea9457063cf56cc8e80e3a986b7052cfa7b83cd6",
+        "salt_and_pepper": "d788ae7a8f1528b709f4a01ec95fc7c0c115a4e1d58c61aea7fb0e542f390d03",
+        "gaussian_blur": "7be25ea1a99d56093839d76b18e4f87a6ebe25cdbd6ef1536982319d9afa8c59",
+        "rectangular_occlusion": "43829ad40c55bb7583b8543fab4a78d99bf26bcd025cc6453e9d0bf99783d5ee"
+      },
+      "train_manifest_sha256": "0794cec5962774c63a2f968e0cf6127ab171272598ebf33ee728a0e27a356972",
+      "validation_manifest_sha256": "787e5736195edeb3b1c2c2f057397005bf5e26d17f00a83ce6b3b54975bdca09"
+    },
+    "task4": {
+      "config": {
+        "base_channels": 32,
+        "dropout": 0.04184815819561255,
+        "embedding_dim": 16,
+        "generator_learning_rate": 0.0003836576984791727,
+        "discriminator_learning_rate": 0.00022219602542548883,
+        "lambda_l1": 42.22210912154244,
+        "batch_size": 16,
+        "epochs": 60,
+        "seed": 42
+      },
+      "epoch": 53,
+      "styles": [
+        "Fine Pencil",
+        "Technical Ink",
+        "Tonal Charcoal"
+      ],
+      "style_input": "int64 [1], indices 0/1/2",
+      "smoke": false,
+      "manifest_sha256": "055d9cef95187e85cb582def57cd03c6871d58df233363b91865c6faac77a432",
+      "checkpoint_sha256": "e9c48c296dec0427f4c85d302cae90a4a19eb3d399b5814872d1702efef374a9",
+      "onnx_sha256": "623746d076117360e93c6995f7d4896f83c5b80dfd97934933443293df1d43d3",
+      "validation_images": 786,
+      "validation_by_style": [
+        262,
+        262,
+        262
+      ],
+      "max_absolute_error": 0.00014698505401611328,
+      "input": "float32 NCHW [1,3,128,128], RGB [0,1], PIL bilinear resize",
+      "parity_atol": 0.0002,
+      "parity_rtol": 0.0001,
+      "passed": true,
+      "max_absolute_error_budget": 0.0002
+    }
+  },
+  "backup_directory": "runs/integration/backups/20261004T144645Z"
+}

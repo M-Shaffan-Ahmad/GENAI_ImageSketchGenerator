@@ -1,0 +1,11 @@
+{
+  "base_channels": 16,
+  "dropout": 0.16280882494747453,
+  "embedding_dim": 4,
+  "generator_learning_rate": 0.0003589414343490807,
+  "discriminator_learning_rate": 5.8590952117421796e-05,
+  "lambda_l1": 41.12514071112865,
+  "batch_size": 16,
+  "epochs": 5,
+  "seed": 42
+}

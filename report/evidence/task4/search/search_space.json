@@ -1,0 +1,31 @@
+{
+  "generator_learning_rate": [
+    0.0001,
+    0.0004
+  ],
+  "discriminator_learning_rate": [
+    5e-05,
+    0.0003
+  ],
+  "batch_size": [
+    8,
+    16
+  ],
+  "base_channels": [
+    16,
+    32
+  ],
+  "dropout": [
+    0.0,
+    0.3
+  ],
+  "embedding_dim": [
+    4,
+    8,
+    16
+  ],
+  "lambda_l1": [
+    30.0,
+    150.0
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "component": "classifier",
+  "best_trial": 2,
+  "best_objective": 0.07910565447573568,
+  "total_trials": 8,
+  "complete_trials": 6
+}

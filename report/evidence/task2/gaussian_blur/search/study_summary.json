@@ -1,0 +1,7 @@
+{
+  "component": "gaussian_blur",
+  "best_trial": 2,
+  "best_objective": 0.08274330438352098,
+  "total_trials": 6,
+  "complete_trials": 4
+}

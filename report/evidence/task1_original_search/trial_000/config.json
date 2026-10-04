@@ -1,0 +1,11 @@
+{
+  "base_channels": 16,
+  "architecture": "spatial_v2",
+  "bottleneck_dim": 4096,
+  "dropout": 0.0020584494295802446,
+  "alpha": 0.9364594334728974,
+  "learning_rate": 0.0003574712922600243,
+  "batch_size": 16,
+  "epochs": 10,
+  "seed": 42
+}

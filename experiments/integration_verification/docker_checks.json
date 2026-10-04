@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "frontend_url": "http://127.0.0.1:18081",
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "task2_ready": true,
+    "task3_ready": true,
+    "task4_ready": true
+  },
+  "checks": [
+    {
+      "endpoint": "universal-restoration",
+      "condition": "clean",
+      "status": 200
+    },
+    {
+      "endpoint": "universal-restoration",
+      "condition": "salt_and_pepper",
+      "status": 200
+    },
+    {
+      "endpoint": "universal-restoration",
+      "condition": "gaussian_blur",
+      "status": 200
+    },
+    {
+      "endpoint": "universal-restoration",
+      "condition": "rectangular_occlusion",
+      "status": 200
+    },
+    {
+      "endpoint": "hard-routed-restoration",
+      "condition": "clean",
+      "status": 200
+    },
+    {
+      "endpoint": "hard-routed-restoration",
+      "condition": "salt_and_pepper",
+      "status": 200
+    },
+    {
+      "endpoint": "hard-routed-restoration",
+      "condition": "gaussian_blur",
+      "status": 200
+    },
+    {
+      "endpoint": "hard-routed-restoration",
+      "condition": "rectangular_occlusion",
+      "status": 200
+    },
+    {
+      "endpoint": "soft-moe-restoration",
+      "condition": "clean",
+      "status": 200
+    },
+    {
+      "endpoint": "soft-moe-restoration",
+      "condition": "salt_and_pepper",
+      "status": 200
+    },
+    {
+      "endpoint": "soft-moe-restoration",
+      "condition": "gaussian_blur",
+      "status": 200
+    },
+    {
+      "endpoint": "soft-moe-restoration",
+      "condition": "rectangular_occlusion",
+      "status": 200
+    },
+    {
+      "endpoint": "object-to-sketch",
+      "style": 1,
+      "status": 200
+    },
+    {
+      "endpoint": "object-to-sketch",
+      "style": 2,
+      "status": 200
+    },
+    {
+      "endpoint": "object-to-sketch",
+      "style": 3,
+      "status": 200
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "learning_rate": [
+    0.0001,
+    0.003
+  ],
+  "base_channels": [
+    16,
+    32,
+    48
+  ],
+  "dropout": [
+    0.0,
+    0.2
+  ],
+  "weight_decay": [
+    1e-06,
+    0.01
+  ]
+}
